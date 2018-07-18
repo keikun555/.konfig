@@ -1,6 +1,9 @@
 # Some environment variables
 export EDITOR='vim'
 
+# set prompt
+PS1="[\d \t] \u@\h\n\w\$ "
+
 # For LaTeX
 export PATH=${PATH}:/usr/local/texlive/2016/bin/x86_64-linux
 
