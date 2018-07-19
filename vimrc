@@ -14,6 +14,11 @@ call vundle#begin('~/.konfig/vim/bundle/')
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+Plugin 'flazz/vim-colorschemes'
+Plugin 'mhinz/vim-signify'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -29,6 +34,11 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" Color scheme stuff
+let g:airline_theme='hybrid'
+colorscheme hybrid
+" Other plugin configs
+let NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
 " Other stuff
 " so I can paste with the mouse
 "set paste
@@ -55,7 +65,7 @@ set wrapmargin=0
 " have syntax highlighting in terminals which can display colours:
 if has('syntax') && (&t_Co > 2)
    syntax on
-   colorscheme elflord
+   colorscheme hybrid
 endif
 highlight PreProc   term=bold cterm=bold ctermfg=2 guifg=Cyan
 

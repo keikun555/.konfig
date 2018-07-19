@@ -16,3 +16,18 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/vim-airline"]
+	path = vim/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "vim/bundle/vim-airline-themes"]
+	path = vim/bundle/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "vim/bundle/YCM-Generator"]
+	path = vim/bundle/YCM-Generator
+	url = https://github.com/rdnetto/YCM-Generator.git
+[submodule "vim/bundle/vim-colorschemes"]
+	path = vim/bundle/vim-colorschemes
+	url = https://github.com/flazz/vim-colorschemes.git
+[submodule "vim/bundle/vim-signify"]
+	path = vim/bundle/vim-signify
+	url = https://github.com/mhinz/vim-signify.git
