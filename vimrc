@@ -12,13 +12,21 @@ call vundle#begin('~/.konfig/vim/bundle/')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plugin 'flazz/vim-colorschemes'
 Plugin 'mhinz/vim-signify'
+Plugin 'junegunn/fzf', { 'dir': '~/.konfig/vim/', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-surround'
+Plugin 'mattn/emmet-vim'
+Plugin 'w0rp/ale'
+Plugin 'majutsushi/tagbar'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
