@@ -11,8 +11,8 @@ export PATH=${PATH}:/usr/local/texlive/2016/bin/x86_64-linux
 export PATH=/usr/local/cuda-8.0/bin:${PATH}
 export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:${LD_LIBRARY_PATH}
 
-# .bashrc
-export PATH=$HOME/kbin:${PATH}
+# kbin and sbin
+export PATH=$HOME/kbin:/usr/local/sbin:/usr/sbin:/sbin${PATH}
 
 # ibus-anthy
 export XMODIFIERS=@im=ibus

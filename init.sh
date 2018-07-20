@@ -10,7 +10,7 @@ mkdir -p ~/.vim/colors
 cp $KONFIG_DIR/vim/bundle/vim-colorschemes/colors/* ~/.vim/colors
 
 # YouCompleteMe
-$BUNDLE_DIR/YouCompleteMe/install.py --clang-completer
+python $BUNDLE_DIR/YouCompleteMe/install.py --clang-completer
 
 # Copy over configs
 cp $KONFIG_DIR/.vimrc ~/.vimrc
