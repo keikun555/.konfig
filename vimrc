@@ -26,7 +26,9 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-surround'
 Plugin 'mattn/emmet-vim'
 Plugin 'w0rp/ale'
-" Plugin 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-commentary'
+Plugin 'xolox/vim-notes'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -44,9 +46,10 @@ filetype plugin indent on    " required
 
 " Color scheme stuff
 let g:airline_theme='hybrid'
-colorscheme hybrid
+colorscheme hybrid_reverse
 " Other plugin configs
 let NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
+nmap <F9> :TagbarToggle<CR>
 " Other stuff
 " so I can paste with the mouse
 "set paste
@@ -73,7 +76,7 @@ set wrapmargin=0
 " have syntax highlighting in terminals which can display colours:
 if has('syntax') && (&t_Co > 2)
    syntax on
-   colorscheme hybrid
+   colorscheme hybrid_reverse
 endif
 highlight PreProc   term=bold cterm=bold ctermfg=2 guifg=Cyan
 
