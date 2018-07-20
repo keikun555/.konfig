@@ -11,3 +11,8 @@ cp $KONFIG_DIR/vim/bundle/vim-colorschemes/colors/* ~/.vim/colors
 
 # YouCompleteMe
 $BUNDLE_DIR/YouCompleteMe/install.py --clang-completer
+
+# Copy over configs
+cp $KONFIG_DIR/.vimrc ~/.vimrc
+cp $KONFIG_DIR/.bashrc ~/.bashrc
+cp $KONFIG_DIR/.tmux.conf ~/.tmux.conf

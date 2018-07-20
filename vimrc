@@ -28,6 +28,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'w0rp/ale'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-commentary'
+Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
