@@ -30,6 +30,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-commentary'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
+Plugin 'tpope/vim-obsession'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required

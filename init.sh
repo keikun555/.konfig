@@ -1,16 +1,15 @@
 #!/bin/bash
 
-KONFIG_DIR=~/.konfig
-BUNDLE_DIR=$KONFIG_DIR/vim/bundle
+source globals.sh
 
-$KONFIG_DIR/vundle_updater.sh
+$KONFIG_DIR/vundle_update.sh
 
 # Initialize colors
 mkdir -p ~/.vim/colors
 cp $KONFIG_DIR/vim/bundle/vim-colorschemes/colors/* ~/.vim/colors
 
 # YouCompleteMe
-python $BUNDLE_DIR/YouCompleteMe/install.py --clang-completer
+ycm_update.sh
 
 # Copy over configs
 cp $KONFIG_DIR/.vimrc ~/.vimrc
