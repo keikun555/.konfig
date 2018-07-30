@@ -9,7 +9,7 @@ mkdir -p ~/.vim/colors
 cp $KONFIG_DIR/vim/bundle/vim-colorschemes/colors/* ~/.vim/colors
 
 # YouCompleteMe
-ycm_update.sh
+$KONFIG_DIR/ycm_update.sh
 
 # Copy over configs
 cp $KONFIG_DIR/.vimrc ~/.vimrc
