@@ -8,10 +8,11 @@ $KONFIG_DIR/vundle_update.sh
 mkdir -p ~/.vim/colors
 cp $KONFIG_DIR/vim/bundle/vim-colorschemes/colors/* ~/.vim/colors
 
-# YouCompleteMe
-$KONFIG_DIR/ycm_update.sh
-
 # Copy over configs
 cp $KONFIG_DIR/.vimrc ~/.vimrc
 cp $KONFIG_DIR/.bashrc ~/.bashrc
+cp $KONFIG_DIR/.bashrc_specific ~/.bashrc_specific
 cp $KONFIG_DIR/.tmux.conf ~/.tmux.conf
+
+# YouCompleteMe
+$KONFIG_DIR/ycm_update.sh
