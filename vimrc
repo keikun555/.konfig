@@ -55,6 +55,9 @@ colorscheme hybrid_reverse
 let NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
 nmap <F9> :TagbarToggle<CR>
 " Other stuff
+" so I can see where my cursor is
+set cursorline
+set cursorcolumn
 " so I can paste with the mouse
 "set paste
 " this gets in the way of cindent, so let's just make it easy to toggle...
