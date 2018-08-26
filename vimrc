@@ -55,6 +55,8 @@ colorscheme hybrid_reverse
 let NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
 nmap <F9> :TagbarToggle<CR>
 " Other stuff
+" folding
+set foldmethod=indent
 " so I can see where my cursor is
 set cursorline
 set cursorcolumn
