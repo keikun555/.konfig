@@ -27,6 +27,11 @@ fi
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
+# Kei's aliases/commands
+function cht {
+  curl cht.sh/$1
+}
+
 # User specific aliases and functions
 . ~/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 

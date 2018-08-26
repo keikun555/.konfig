@@ -1,4 +1,5 @@
 #!/bin/bash
+# NOTE: Make sure to change the '/home/jonny' to the right directory
 
 source globals.sh
 
