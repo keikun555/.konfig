@@ -32,6 +32,8 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 Plugin 'tpope/vim-obsession'
 Plugin 'vimwiki/vimwiki'
+Plugin 'dkarter/bullets.vim'
+Plugin 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
