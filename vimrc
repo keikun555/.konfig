@@ -34,6 +34,7 @@ Plugin 'tpope/vim-obsession'
 Plugin 'vimwiki/vimwiki'
 Plugin 'dkarter/bullets.vim'
 Plugin 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plugin 'dhruvasagar/vim-table-mode'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
