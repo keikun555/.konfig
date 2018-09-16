@@ -76,3 +76,12 @@
 [submodule "vim/bundle/vimwiki"]
 	path = vim/bundle/vimwiki
 	url = git@github.com:vimwiki/vimwiki.git
+[submodule "vim/bundle/bullets.vim"]
+	path = vim/bundle/bullets.vim
+	url = git@github.com:dkarter/bullets.vim.git
+[submodule "vim/bundle/vim-latex-live-preview"]
+	path = vim/bundle/vim-latex-live-preview
+	url = git@github.com:xuhdev/vim-latex-live-preview.git
+[submodule "vim/bundle/vim-table-mode"]
+	path = vim/bundle/vim-table-mode
+	url = git@github.com:dhruvasagar/vim-table-mode.git
