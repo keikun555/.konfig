@@ -1,6 +1,30 @@
 # Some environment variables
 export EDITOR='vim'
 
+# start the ssh-agent if not running and add my keys
+SSH_ENV="$HOME/.ssh/environment"
+ 
+function start_agent {
+        echo "Initialising new SSH agent..."
+        /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+        echo succeeded
+        chmod 600 "${SSH_ENV}"
+        . "${SSH_ENV}" > /dev/null
+        /usr/bin/ssh-add;
+        /usr/bin/ssh-add ~/.ssh/id_pure_root;
+}
+ 
+if [ -f "${SSH_ENV}" ]
+then
+        . "${SSH_ENV}" > /dev/null
+        #ps ${SSH_AGENT_PID} doesn't work under cywgin
+        ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+                start_agent;
+        }
+else
+        start_agent;
+fi
+
 # set prompt
 PS1="[\d \t] \u@\h\n\w\$ "
 

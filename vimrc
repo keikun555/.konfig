@@ -35,6 +35,9 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'dkarter/bullets.vim'
 Plugin 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -52,13 +55,33 @@ filetype plugin indent on    " required
 
 " encoding stuff for YouCompleteMe
 set encoding=utf-8
+
+"python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
+
+" Emmet with jsx
+let g:user_emmet_leader_key='<Tab>'
+let g:user_emmet_settings = {
+  \  'javascript.jsx' : {
+    \      'extends' : 'jsx',
+    \  },
+  \}
 " Color scheme stuff
 let g:airline_theme='hybrid'
-colorscheme hybrid_reverse
+colorscheme happy_hacking
 " Other plugin configs
 let NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
 nmap <F9> :TagbarToggle<CR>
 " Other stuff
+" so I can paste without indentation errors
+set paste
 " folding
 set foldmethod=indent
 " so I can see where my cursor is
@@ -69,6 +92,7 @@ set cursorcolumn
 " this gets in the way of cindent, so let's just make it easy to toggle...
 set pastetoggle=<F2>
 " so I can click with my mouse
+set ttymouse=sgr
 set mouse=a
 "
 " auto backups
