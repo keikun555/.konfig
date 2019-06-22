@@ -1,6 +1,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " .vimrc file
 "
+" source $KONFIG_DIR/vimrc_colors
 " Just Vundle things
 set nocompatible
 filetype off
@@ -30,14 +31,23 @@ Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-commentary'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
+Plugin 'xolox/vim-session'
 Plugin 'tpope/vim-obsession'
-Plugin 'vimwiki/vimwiki'
-Plugin 'dkarter/bullets.vim'
-Plugin 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-Plugin 'dhruvasagar/vim-table-mode'
+" Plugin 'vimwiki/vimwiki'
+" Plugin 'dkarter/bullets.vim'
+" Plugin 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+" Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'Chiel92/vim-autoformat'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
+" typescript/javascript
+" Plugin 'pangloss/vim-javascript'
+" Plugin 'mxw/vim-jsx'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
+Plugin 'Quramy/tsuquyomi'
+Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+Plugin 'ap/vim-css-color'
+" Plugin 'godlygeek/csapprox'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -53,8 +63,18 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" vim-session don't ask when going on blank vim
+let g:session_autoload = 'no'
+
 " encoding stuff for YouCompleteMe
 set encoding=utf-8
+let g:ycm_filetype_blacklist = { 'typescript.tsx': 1 }
+
+" for ALE
+let g:ale_linters = {
+\   'typescript.tsx': ['tslint'],
+\}
+
 
 "python with virtualenv support
 py << EOF
@@ -65,23 +85,53 @@ if 'VIRTUAL_ENV' in os.environ:
   activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
   execfile(activate_this, dict(__file__=activate_this))
 EOF
-
+" set working directory the same as editing file
+set autochdir
 " Emmet with jsx
 let g:user_emmet_leader_key='<Tab>'
 let g:user_emmet_settings = {
-  \  'javascript.jsx' : {
-    \      'extends' : 'jsx',
-    \  },
-  \}
-" Color scheme stuff
-let g:airline_theme='hybrid'
-colorscheme happy_hacking
+            \  'javascript.jsx' : {
+            \      'extends' : 'jsx',
+            \  },
+            \}
 " Other plugin configs
 let NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
 nmap <F9> :TagbarToggle<CR>
 " Other stuff
-" so I can paste without indentation errors
-set paste
+" Color scheme stuff
+" This is only necessary if you use "set termguicolors".
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+" fixes glitch? in colors when using vim with tmux
+set background=dark
+set t_Co=256
+
+set termguicolors
+if $COLORTERM == 'gnome-terminal'
+    set t_Co=256
+    set t_ZH=^[[3m
+    set t_ZR=^[[23m
+endif
+" for typescript files
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+autocmd BufNewFile,BufRead *.ts,*.js set filetype=typescript.jsx
+filetype plugin on
+syntax on
+let g:airline_theme='hybrid'
+colorscheme Benokai
+colorscheme hybrid
+" vim tab navigation
+map t<up> :tabr<cr>
+map t<down> :tabl<cr>
+map t<left> :tabp<cr>
+map t<right> :tabn<cr>
+map tn :tabnew<cr>
+map tc :tabc<cr>
+" vim splits
+map <C-w><bar> :vsplit<cr>
+map <C-w>- :split<cr>
+
 " folding
 set foldmethod=indent
 " so I can see where my cursor is
@@ -94,6 +144,9 @@ set pastetoggle=<F2>
 " so I can click with my mouse
 set ttymouse=sgr
 set mouse=a
+
+" set line numbers
+set number relativenumber
 "
 " auto backups
 "set backup
@@ -111,11 +164,7 @@ set wrapmargin=0
 " http://www.stripey.com/vim/
 "
 " have syntax highlighting in terminals which can display colours:
-if has('syntax') && (&t_Co > 2)
-   syntax on
-   colorscheme hybrid_reverse
-endif
-highlight PreProc   term=bold cterm=bold ctermfg=2 guifg=Cyan
+" highlight PreProc   term=bold cterm=bold ctermfg=2 guifg=Cyan
 
 set backspace=indent,eol,start
 "
@@ -138,10 +187,20 @@ set showmode
 set showcmd
 "
 " use indents of 2 spaces, and have them copied down lines:
-set shiftwidth=2
+" spaces & Tabs {{{
+set tabstop=4           " 4 space tab
+set expandtab           " use spaces for tabs
+set softtabstop=4       " 4 space tab
+set shiftwidth=4
+set modelines=1
+" nnoremap Q <nop>
+" vmap <Tab> >gv
+" vmap <S-Tab> <gv
+" set shiftwidth=2
 set shiftround
 set expandtab
 set autoindent
+" }}}
 "
 " get rid of the default style of C comments, and define a style with two stars
 " at the start of `middle' rows which (looks nicer and) avoids asterisks used
@@ -159,9 +218,12 @@ set comments+=n::
 "
 " enable filetype detection:
 filetype on
-filetype indent on
-filetype plugin on
-"
+" tsx/jsx comment style
+autocmd FileType typescript.tsx set commentstring={/*\ %s\ */}
+autocmd FileType typescript.tsx set ts=2
+autocmd FileType typescript.tsx set sts=2
+autocmd FileType typescript.tsx set et     "expand tabs to spaces
+autocmd FileType typescript.tsx set sw=2
 " in human-language files, automatically format everything at 72 chars:
 autocmd FileType mail,human set formatoptions+=t textwidth=72
 
@@ -226,15 +288,15 @@ nnoremap <C-P> :prev<CR>
 set matchpairs+=<:>
 
 " have Q reformat the current paragraph (or selected text if there is any):
-nnoremap Q gqap 
-vnoremap Q gq 
+nnoremap Q gqap
+vnoremap Q gq
 
 " branen's refresh to get rid of the search highlights
 map <C-L> :noh<CR>:redraw!<CR>
 "
 " html mapping
 imap ;kb <kbd></kbd><left><left><left><left><left><left>
-" 
+"
 " more fun from Ben Kuperman
 imap ;so System.out.println();<left><left>
 imap ;ne <esc>/;<cr>a
@@ -246,13 +308,14 @@ vmap <buffer> ;bo "zdi<B><c-r>z</B><esc>
 " spell stuff
 if has("spell")
     set nospell
-    highlight PmenuSel ctermfg=black ctermbg=lightgray 
+    highlight PmenuSel ctermfg=black ctermbg=lightgray
     map <F5> :set spell!<CR><Bar>:echo "Spell Check: " . strpart("OffOn", 3 * &spell, 3)<CR>
     set sps=best,10
 endif
 "
-" 
+"
 " more from ben...
 let spell_language_list = "american"
+
 " end .vimrc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

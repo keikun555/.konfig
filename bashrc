@@ -1,5 +1,7 @@
 # Some environment variables
+export KONFIG_DIR='~/.konfig'
 export EDITOR='vim'
+export TERM='xterm-256color-italic'
 
 # start the ssh-agent if not running and add my keys
 SSH_ENV="$HOME/.ssh/environment"
