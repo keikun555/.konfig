@@ -68,7 +68,7 @@ let g:session_autoload = 'no'
 
 " encoding stuff for YouCompleteMe
 set encoding=utf-8
-let g:ycm_filetype_blacklist = { 'typescript.tsx': 1 }
+" let g:ycm_filetype_blacklist = { 'typescript.tsx': 1 }
 
 " for ALE
 let g:ale_linters = {
