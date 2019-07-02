@@ -112,9 +112,6 @@
 [submodule "vim/bundle/vim-css-color"]
 	path = vim/bundle/vim-css-color
 	url = https://github.com/ap/vim-css-color.git
-[submodule "vim/bundle/godlygeek/csapprox"]
-	path = vim/bundle/godlygeek/csapprox
-	url = https://github.com/godlygeek/csapprox.git
 [submodule "vim/bundle/vim-prettier"]
 	path = vim/bundle/vim-prettier
 	url = https://github.com/prettier/vim-prettier
