@@ -13,7 +13,7 @@ call vundle#begin('~/.konfig/vim/bundle/')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plugin 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --ts-completer' }
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -44,10 +44,10 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'Quramy/tsuquyomi'
-Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plugin 'prettier/vim-prettier', { 'do': 'yarn add' }
 
 Plugin 'ap/vim-css-color'
-" Plugin 'godlygeek/csapprox'
+Plugin 'godlygeek/csapprox'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -69,6 +69,9 @@ let g:session_autoload = 'no'
 " encoding stuff for YouCompleteMe
 set encoding=utf-8
 " let g:ycm_filetype_blacklist = { 'typescript.tsx': 1 }
+" Don't show YCM's preview window [ I find it really annoying ]
+set completeopt-=preview
+let g:ycm_add_preview_to_completeopt = 0
 
 " for ALE
 let g:ale_linters = {
@@ -77,14 +80,14 @@ let g:ale_linters = {
 
 
 "python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
+" py << EOF
+" import os
+" import sys
+" if 'VIRTUAL_ENV' in os.environ:
+"   project_base_dir = os.environ['VIRTUAL_ENV']
+"   activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"   execfile(activate_this, dict(__file__=activate_this))
+" EOF
 " set working directory the same as editing file
 set autochdir
 " Emmet with jsx
@@ -113,7 +116,13 @@ if $COLORTERM == 'gnome-terminal'
     set t_ZH=^[[3m
     set t_ZR=^[[23m
 endif
+if $COLORTERM == 'xterm-256color'
+    set t_Co=256
+    set t_AB=^[[48;5;%dm
+    set t_AF=^[[38;5;%dm
+endif
 " for typescript files
+set backupcopy=yes
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 autocmd BufNewFile,BufRead *.ts,*.js set filetype=typescript.jsx
 filetype plugin on
