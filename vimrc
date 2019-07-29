@@ -106,6 +106,15 @@ nmap <F9> :TagbarToggle<CR>
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
+" for typescript files
+set backupcopy=yes
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+autocmd BufNewFile,BufRead *.ts,*.js set filetype=typescript.jsx
+filetype plugin on
+syntax on
+let g:airline_theme='hybrid'
+colorscheme Benokai
+colorscheme hybrid
 " fixes glitch? in colors when using vim with tmux
 set background=dark
 set t_Co=256
@@ -121,15 +130,6 @@ if $COLORTERM == 'xterm-256color'
     set t_AB=^[[48;5;%dm
     set t_AF=^[[38;5;%dm
 endif
-" for typescript files
-set backupcopy=yes
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
-autocmd BufNewFile,BufRead *.ts,*.js set filetype=typescript.jsx
-filetype plugin on
-syntax on
-let g:airline_theme='hybrid'
-colorscheme Benokai
-colorscheme hybrid
 " vim tab navigation
 map t<up> :tabr<cr>
 map t<down> :tabl<cr>
