@@ -68,7 +68,7 @@ let g:session_autoload = 'no'
 
 " encoding stuff for YouCompleteMe
 set encoding=utf-8
-" let g:ycm_filetype_blacklist = { 'typescript.tsx': 1 }
+let g:ycm_filetype_blacklist = { 'typescript.tsx': 1 }
 " Don't show YCM's preview window [ I find it really annoying ]
 set completeopt-=preview
 let g:ycm_add_preview_to_completeopt = 0
@@ -123,11 +123,14 @@ if $COLORTERM == 'xterm-256color'
 endif
 " for typescript files
 set backupcopy=yes
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
-autocmd BufNewFile,BufRead *.ts,*.js set filetype=typescript.jsx
+autocmd BufNewFile *.tsx,*.jsx set filetype=typescript.tsx
+autocmd BufNewFile *.ts,*.js set filetype=typescript.jsx
 filetype plugin on
 syntax on
 let g:airline_theme='hybrid'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
 colorscheme Benokai
 colorscheme hybrid
 " vim tab navigation
@@ -142,7 +145,7 @@ map <C-w><bar> :vsplit<cr>
 map <C-w>- :split<cr>
 
 " folding
-set foldmethod=indent
+" set foldmethod=syntax
 " so I can see where my cursor is
 set cursorline
 set cursorcolumn
@@ -156,6 +159,11 @@ set mouse=a
 
 " set line numbers
 set number relativenumber
+" turn them off if typescript and others
+autocmd BufNewFile,BufRead *.tsx,*.jsx,*.ts,*.js 
+            \ set nocursorline |
+            \ set nocursorcolumn |
+            \ set norelativenumber
 "
 " auto backups
 "set backup
