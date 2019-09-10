@@ -34,7 +34,7 @@ Plugin 'xolox/vim-notes'
 Plugin 'xolox/vim-session'
 Plugin 'tpope/vim-obsession'
 " Plugin 'vimwiki/vimwiki'
-" Plugin 'dkarter/bullets.vim'
+Plugin 'dkarter/bullets.vim'
 " Plugin 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 " Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'Chiel92/vim-autoformat'
@@ -217,7 +217,7 @@ set showcmd
 set tabstop=4           " 4 space tab
 set expandtab           " use spaces for tabs
 set softtabstop=4       " 4 space tab
-set shiftwidth=4
+set shiftwidth=2
 set modelines=1
 " nnoremap Q <nop>
 " vmap <Tab> >gv
