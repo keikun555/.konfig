@@ -69,7 +69,11 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git ssh-agent vundle vi-mode tmux colored-man-pages colorize)
+plugins=(git ssh-agent
+         vundle vi-mode
+         tmux colored-man-pages
+         colorize safe-paste
+         web-search themes)
 
 source $ZSH/oh-my-zsh.sh
 
