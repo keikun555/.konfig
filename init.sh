@@ -11,6 +11,7 @@ cp $KONFIG_DIR/vim/bundle/vim-colorschemes/colors/* ~/.vim/colors
 # Copy over configs
 cp $KONFIG_DIR/.vimrc ~/.vimrc
 cp $KONFIG_DIR/.bashrc ~/.bashrc
+cp $KONFIG_DIR/.zshrc ~/.zshrc
 cp $KONFIG_DIR/.bashrc_specific ~/.bashrc_specific
 cp $KONFIG_DIR/.tmux.conf ~/.tmux.conf
 
