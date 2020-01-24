@@ -33,9 +33,11 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 Plugin 'xolox/vim-session'
 Plugin 'tpope/vim-obsession'
+Plugin 'itchyny/calendar.vim'
 " Plugin 'vimwiki/vimwiki'
 Plugin 'dkarter/bullets.vim'
 " Plugin 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+" Plugin 'vim-latex/vim-latex'
 " Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'Chiel92/vim-autoformat'
 " typescript/javascript
@@ -51,6 +53,10 @@ Plugin 'godlygeek/csapprox'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -62,6 +68,11 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+" calendar.vim
+" get google stuff
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
 
 " vim-session don't ask when going on blank vim
 let g:session_autoload = 'no'
