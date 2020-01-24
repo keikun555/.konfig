@@ -44,7 +44,7 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'Quramy/tsuquyomi'
-Plugin 'prettier/vim-prettier', { 'do': 'yarn add' }
+Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 Plugin 'ap/vim-css-color'
 Plugin 'godlygeek/csapprox'
@@ -62,6 +62,8 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+" we want react to detect changes
+set backupcopy=yes
 
 " vim-session don't ask when going on blank vim
 let g:session_autoload = 'no'
@@ -127,9 +129,13 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 colorscheme Benokai
 colorscheme hybrid
+" This is only necessary if you use "set termguicolors".
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 " fixes glitch? in colors when using vim with tmux
 set background=dark
 set t_Co=256
+set t_ut=
 
 set termguicolors
 if $COLORTERM == 'gnome-terminal'
