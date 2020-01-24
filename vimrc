@@ -33,9 +33,11 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 Plugin 'xolox/vim-session'
 Plugin 'tpope/vim-obsession'
+Plugin 'itchyny/calendar.vim'
 " Plugin 'vimwiki/vimwiki'
 Plugin 'dkarter/bullets.vim'
 " Plugin 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+" Plugin 'vim-latex/vim-latex'
 " Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'Chiel92/vim-autoformat'
 " typescript/javascript
@@ -44,13 +46,17 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'Quramy/tsuquyomi'
-Plugin 'prettier/vim-prettier', { 'do': 'yarn add' }
+Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 Plugin 'ap/vim-css-color'
 Plugin 'godlygeek/csapprox'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -62,6 +68,13 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+" we want react to detect changes
+set backupcopy=yes
+
+" calendar.vim
+" get google stuff
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
 
 " vim-session don't ask when going on blank vim
 let g:session_autoload = 'no'
@@ -127,9 +140,13 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 colorscheme Benokai
 colorscheme hybrid
+" This is only necessary if you use "set termguicolors".
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 " fixes glitch? in colors when using vim with tmux
 set background=dark
 set t_Co=256
+set t_ut=
 
 set termguicolors
 if $COLORTERM == 'gnome-terminal'
@@ -152,6 +169,17 @@ map tc :tabc<cr>
 " vim splits
 map <C-w><bar> :vsplit<cr>
 map <C-w>- :split<cr>
+" display moves
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up> gk
+vnoremap <Down> gj
+vnoremap <Up> gk
+inoremap <Down> <C-o>gj
+inoremap <Up> <C-o>gk
 
 " folding
 " set foldmethod=syntax

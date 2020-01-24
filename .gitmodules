@@ -118,3 +118,9 @@
 [submodule "vim/bundle/vim-session"]
 	path = vim/bundle/vim-session
 	url = https://github.com/xolox/vim-session.git
+[submodule "vim/bundle/vim-latex"]
+	path = vim/bundle/vim-latex
+	url = https://github.com/vim-latex/vim-latex.git
+[submodule "vim/bundle/calendar.vim"]
+	path = vim/bundle/calendar.vim
+	url = https://github.com/itchyny/calendar.vim.git
