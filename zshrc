@@ -98,3 +98,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias latr='ls -latrh'
+alias mv='mv -i'
+alias tl='tmux ls'
+alias ta='tmux attach'
+alias tat='tmux attach -t '
