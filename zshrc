@@ -98,6 +98,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+function cht {
+  curl cht.sh/$1
+}
 alias latr='ls -latrh'
 alias mv='mv -i'
 alias tl='tmux ls'
