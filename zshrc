@@ -107,3 +107,6 @@ function cht {
 }
 alias latr='ls -latrh'
 alias mv='mv -i'
+alias cp='cp -i'
+alias rm='rm -i'
+alias c='clear'
