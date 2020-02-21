@@ -1,0 +1,13 @@
+configuration {
+  modi: "drun,window,ssh,combi";
+  show-icons: true;
+  theme: "Pop-Dark";
+  font: "hack 12";
+  combi-modi: "window,drun,ssh";
+  terminal: "alacritty";
+  display-run: "run ";
+  display-ssh: "ssh ";
+  display-drun: "drun ";
+  display-combi: "combi ";
+  display-keys: "keys ";
+}
