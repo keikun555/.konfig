@@ -124,3 +124,12 @@
 [submodule "vim/bundle/calendar.vim"]
 	path = vim/bundle/calendar.vim
 	url = https://github.com/itchyny/calendar.vim.git
+[submodule "zsh/oh-my-zsh"]
+	path = zsh/oh-my-zsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git
+[submodule "zsh/zsh"]
+	path = zsh/zsh
+	url = git://git.code.sf.net/p/zsh/code
+[submodule "zsh/custom/themes/powerlevel10k"]
+	path = zsh/custom/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
