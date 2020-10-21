@@ -78,6 +78,7 @@ let g:calendar_google_task = 1
 
 " vim-session don't ask when going on blank vim
 let g:session_autoload = 'no'
+set shell=/bin/zsh
 
 " encoding stuff for YouCompleteMe
 set encoding=utf-8
@@ -197,7 +198,7 @@ set mouse=a
 " set line numbers
 set number relativenumber
 " turn them off if typescript and others
-autocmd BufNewFile,BufRead *.tsx,*.jsx,*.ts,*.js 
+autocmd BufNewFile,BufRead *.tsx,*.jsx,*.ts,*.js
             \ set nocursorline |
             \ set nocursorcolumn |
             \ set norelativenumber
