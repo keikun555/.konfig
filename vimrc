@@ -78,6 +78,7 @@ let g:calendar_google_task = 1
 
 " vim-session don't ask when going on blank vim
 let g:session_autoload = 'no'
+let g:session_autosave = 'no'
 set shell=/usr/local/bin/zsh
 
 " encoding stuff for YouCompleteMe
