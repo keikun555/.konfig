@@ -84,3 +84,5 @@ alias rm='rm -i'
 alias tl='tmux ls'
 alias ta='tmux attach'
 alias tat='tmux attach -t '
+
+[ -f $KONFIG_DIR/fzf.bash ] && source $KONFIG_DIR/fzf.bash

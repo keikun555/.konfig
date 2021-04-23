@@ -2,7 +2,8 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.konfig/zsh/oh-my-zsh"
+export KONFIG_DIR="$HOME/.konfig"
+export ZSH="$KONFIG_DIR/zsh/oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -10,6 +11,7 @@ export ZSH="$HOME/.konfig/zsh/oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="ys"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -73,7 +75,8 @@ plugins=(git ssh-agent
          vundle vi-mode
          tmux colored-man-pages
          colorize safe-paste
-         web-search themes)
+         web-search themes
+         fzf-tab)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.konfig/.p10k.zsh
@@ -112,3 +115,17 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias rm='rm -i'
 alias c='clear'
+
+# FZF
+[ -f $KONFIG_DIR/fzf.zsh ] && source $KONFIG_DIR/fzf.zsh
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# preview directory's content with exa when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+# switch group using `,` and `.`
+zstyle ':fzf-tab:*' switch-group ',' '.'
+

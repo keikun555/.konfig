@@ -50,6 +50,7 @@ Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 Plugin 'ap/vim-css-color'
 Plugin 'godlygeek/csapprox'
+Plugin 'mtdl9/vim-log-highlighting'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required

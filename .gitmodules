@@ -136,3 +136,12 @@
 [submodule "tmux/tmux"]
 	path = tmux/tmux
 	url = https://github.com/tmux/tmux.git
+[submodule "vim/bundle/vim-log-highlighting"]
+	path = vim/bundle/vim-log-highlighting
+	url = https://github.com/MTDL9/vim-log-highlighting.git
+[submodule "zsh/custom/plugins/fzf-tab"]
+	path = zsh/custom/plugins/fzf-tab
+	url = git@github.com:Aloxaf/fzf-tab.git
+[submodule "fzf"]
+	path = fzf
+	url = git@github.com:junegunn/fzf.git
