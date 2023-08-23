@@ -1,11 +1,11 @@
 [submodule "tmux/plugins/tpm"]
-	path = tmux/plugins/tpm
+	path = tmux/.tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
 [submodule "tmux/plugins/tmux-sensible"]
-	path = tmux/plugins/tmux-sensible
+	path = tmux/.tmux/plugins/tmux-sensible
 	url = https://github.com/tmux-plugins/tmux-sensible
 [submodule "tmux/plugins/tmux-themepack"]
-	path = tmux/plugins/tmux-themepack
+	path = tmux/.tmux/plugins/tmux-themepack
 	url = https://github.com/jimeh/tmux-themepack.git
 [submodule "vim/bundle/YouCompleteMe"]
 	path = vim/bundle/YouCompleteMe
@@ -68,7 +68,7 @@
 	path = vim/bundle/vim-misc
 	url = https://github.com/xolox/vim-misc.git
 [submodule "tmux/plugins/tmux-resurrect"]
-	path = tmux/plugins/tmux-resurrect
+	path = tmux/.tmux/plugins/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect
 [submodule "vim/bundle/vim-obsession"]
 	path = vim/bundle/vim-obsession
@@ -125,23 +125,29 @@
 	path = vim/bundle/calendar.vim
 	url = https://github.com/itchyny/calendar.vim.git
 [submodule "zsh/oh-my-zsh"]
-	path = zsh/oh-my-zsh
+	path = zsh.bak/oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
 [submodule "zsh/zsh"]
-	path = zsh/zsh
+	path = zsh.bak/zsh
 	url = git://git.code.sf.net/p/zsh/code
 [submodule "zsh/custom/themes/powerlevel10k"]
-	path = zsh/custom/themes/powerlevel10k
+	path = zsh.bak/custom/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
 [submodule "tmux/tmux"]
-	path = tmux/tmux
+	path = tmux.bak/tmux
 	url = https://github.com/tmux/tmux.git
 [submodule "vim/bundle/vim-log-highlighting"]
 	path = vim/bundle/vim-log-highlighting
 	url = https://github.com/MTDL9/vim-log-highlighting.git
 [submodule "zsh/custom/plugins/fzf-tab"]
-	path = zsh/custom/plugins/fzf-tab
+	path = fzf/.oh-my-zsh/custom/plugins/fzf-tab
 	url = git@github.com:Aloxaf/fzf-tab.git
 [submodule "fzf"]
-	path = fzf
+	path = fzf/.fzf
 	url = git@github.com:junegunn/fzf.git
+[submodule "powerlevel10k/.oh-my-zsh/custom/themes/powerlevel10k"]
+	path = powerlevel10k/.oh-my-zsh/custom/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
+[submodule "oh-my-zsh/.oh-my-zsh"]
+	path = oh-my-zsh/.oh-my-zsh
+	url = git@github.com:ohmyzsh/ohmyzsh.git
