@@ -169,6 +169,25 @@ map t<left> :tabp<cr>
 map t<right> :tabn<cr>
 map tn :tabnew<cr>
 map tc :tabc<cr>
+" Shortcuts to move between tabs with Ctrl+Shift+Left/Right
+function TabLeft()
+   if tabpagenr() == 1
+      execute "tabm"
+   else
+      execute "tabm -1"
+   endif
+endfunction
+
+function TabRight()
+   if tabpagenr() == tabpagenr('$')
+      execute "tabm" 0
+   else
+      execute "tabm +1"
+   endif
+endfunction
+
+map T<right> :execute TabRight()<CR>
+map T<left> :execute TabLeft()<CR>
 " vim splits
 map <C-w><bar> :vsplit<cr>
 map <C-w>- :split<cr>
