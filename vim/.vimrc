@@ -6,10 +6,10 @@
 set nocompatible
 filetype off
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.konfig/vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 "call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
-call vundle#begin('~/.konfig/vim/bundle/')
+call vundle#begin('~/.vim/bundle/')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -20,7 +20,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plugin 'flazz/vim-colorschemes'
 Plugin 'mhinz/vim-signify'
-Plugin 'junegunn/fzf', { 'dir': '~/.konfig/vim/', 'do': './install --all' }
+Plugin 'junegunn/fzf', { 'dir': '~/.vim/', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-eunuch'
@@ -43,14 +43,14 @@ Plugin 'Chiel92/vim-autoformat'
 " typescript/javascript
 " Plugin 'pangloss/vim-javascript'
 " Plugin 'mxw/vim-jsx'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'peitalin/vim-jsx-typescript'
-Plugin 'Quramy/tsuquyomi'
-Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
+" Plugin 'leafgarland/typescript-vim'
+" Plugin 'peitalin/vim-jsx-typescript'
+" Plugin 'Quramy/tsuquyomi'
+" Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
 
-Plugin 'ap/vim-css-color'
-Plugin 'godlygeek/csapprox'
-Plugin 'mtdl9/vim-log-highlighting'
+" Plugin 'ap/vim-css-color'
+" Plugin 'godlygeek/csapprox'
+" Plugin 'mtdl9/vim-log-highlighting'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required

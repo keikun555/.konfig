@@ -8,124 +8,121 @@
 	path = tmux/.tmux/plugins/tmux-themepack
 	url = https://github.com/jimeh/tmux-themepack.git
 [submodule "vim/bundle/YouCompleteMe"]
-	path = vim/bundle/YouCompleteMe
+	path = vim/.vim/bundle/YouCompleteMe
 	url = https://github.com/ycm-core/YouCompleteMe.git
 [submodule "vim/bundle/Vundle.vim"]
-	path = vim/bundle/Vundle.vim
+	path = vim/.vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
 [submodule "vim/bundle/nerdtree"]
-	path = vim/bundle/nerdtree
+	path = vim/.vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule "vim/bundle/vim-airline"]
-	path = vim/bundle/vim-airline
+	path = vim/.vim/bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline.git
 [submodule "vim/bundle/vim-airline-themes"]
-	path = vim/bundle/vim-airline-themes
+	path = vim/.vim/bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
 [submodule "vim/bundle/YCM-Generator"]
-	path = vim/bundle/YCM-Generator
+	path = vim/.vim/bundle/YCM-Generator
 	url = https://github.com/rdnetto/YCM-Generator.git
 [submodule "vim/bundle/vim-colorschemes"]
-	path = vim/bundle/vim-colorschemes
+	path = vim/.vim/bundle/vim-colorschemes
 	url = https://github.com/flazz/vim-colorschemes.git
 [submodule "vim/bundle/vim-signify"]
-	path = vim/bundle/vim-signify
+	path = vim/.vim/bundle/vim-signify
 	url = https://github.com/mhinz/vim-signify.git
 [submodule "vim/bundle/fzf.vim"]
-	path = vim/bundle/fzf.vim
+	path = vim/.vim/bundle/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
 [submodule "vim/bundle/fzf"]
-	path = vim/bundle/fzf
+	path = vim/.vim/bundle/fzf
 	url = https://github.com/junegunn/fzf.git
 [submodule "vim/bundle/vim-multiple-cursors"]
-	path = vim/bundle/vim-multiple-cursors
+	path = vim/.vim/bundle/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors.git
 [submodule "vim/bundle/vim-surround"]
-	path = vim/bundle/vim-surround
+	path = vim/.vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
 [submodule "vim/bundle/emmet-vim"]
-	path = vim/bundle/emmet-vim
+	path = vim/.vim/bundle/emmet-vim
 	url = https://github.com/mattn/emmet-vim.git
 [submodule "vim/bundle/ale"]
-	path = vim/bundle/ale
+	path = vim/.vim/bundle/ale
 	url = https://github.com/w0rp/ale.git
 [submodule "vim/bundle/tagbar"]
-	path = vim/bundle/tagbar
+	path = vim/.vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
 [submodule "vim/bundle/vim-eunuch"]
-	path = vim/bundle/vim-eunuch
+	path = vim/.vim/bundle/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch.git
-[submodule "vim/source"]
-	path = vim/source
-	url = https://github.com/vim/vim.git
 [submodule "vim/bundle/vim-commentary"]
-	path = vim/bundle/vim-commentary
+	path = vim/.vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
 [submodule "vim/bundle/vim-notes"]
-	path = vim/bundle/vim-notes
+	path = vim/.vim/bundle/vim-notes
 	url = https://github.com/xolox/vim-notes.git
 [submodule "vim/bundle/vim-misc"]
-	path = vim/bundle/vim-misc
+	path = vim/.vim/bundle/vim-misc
 	url = https://github.com/xolox/vim-misc.git
 [submodule "tmux/plugins/tmux-resurrect"]
 	path = tmux/.tmux/plugins/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect
 [submodule "vim/bundle/vim-obsession"]
-	path = vim/bundle/vim-obsession
+	path = vim/.vim/bundle/vim-obsession
         url = https://github.com/tpope/vim-obsession.git
 [submodule "vim/bundle/vimwiki"]
-	path = vim/bundle/vimwiki
+	path = vim/.vim/bundle/vimwiki
 	url = https://github.com/vimwiki/vimwiki.git
 [submodule "vim/bundle/bullets.vim"]
-	path = vim/bundle/bullets.vim
+	path = vim/.vim/bundle/bullets.vim
 	url = https://github.com/dkarter/bullets.vim.git
 [submodule "vim/bundle/vim-latex-live-preview"]
-	path = vim/bundle/vim-latex-live-preview
+	path = vim/.vim/bundle/vim-latex-live-preview
 	url = https://github.com/xuhdev/vim-latex-live-preview.git
 [submodule "vim/bundle/vim-table-mode"]
-	path = vim/bundle/vim-table-mode
+	path = vim/.vim/bundle/vim-table-mode
 	url = https://github.com/dhruvasagar/vim-table-mode.git
 [submodule "vim/bundle/tabular"]
-	path = vim/bundle/tabular
+	path = vim/.vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
 [submodule "vim/bundle/vim-markdown"]
-	path = vim/bundle/vim-markdown
+	path = vim/.vim/bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
 [submodule "vim/bundle/vim-autoformat"]
-	path = vim/bundle/vim-autoformat
+	path = vim/.vim/bundle/vim-autoformat
 	url = https://github.com/Chiel92/vim-autoformat.git
 [submodule "vim/bundle/vim-javascript"]
-	path = vim/bundle/vim-javascript
+	path = vim/.vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
 [submodule "vim/bundle/vim-jsx"]
-	path = vim/bundle/vim-jsx
+	path = vim/.vim/bundle/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
 [submodule "vim/bundle/typescript-vim"]
-	path = vim/bundle/typescript-vim
+	path = vim/.vim/bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
 [submodule "vim/bundle/tsuquyomi"]
-	path = vim/bundle/tsuquyomi
+	path = vim/.vim/bundle/tsuquyomi
 	url = https://github.com/Quramy/tsuquyomi.git
 [submodule "vim/bundle/vim-jsx-typescript"]
-	path = vim/bundle/vim-jsx-typescript
+	path = vim/.vim/bundle/vim-jsx-typescript
 	url = https://github.com/peitalin/vim-jsx-typescript.git
 [submodule "vim/bundle/vim-css-color"]
-	path = vim/bundle/vim-css-color
+	path = vim/.vim/bundle/vim-css-color
 	url = https://github.com/ap/vim-css-color.git
 [submodule "vim/bundle/vim-prettier"]
-	path = vim/bundle/vim-prettier
+	path = vim/.vim/bundle/vim-prettier
 	url = https://github.com/prettier/vim-prettier
 [submodule "vim/bundle/vim-session"]
-	path = vim/bundle/vim-session
+	path = vim/.vim/bundle/vim-session
 	url = https://github.com/xolox/vim-session.git
 [submodule "vim/bundle/vim-latex"]
-	path = vim/bundle/vim-latex
+	path = vim/.vim/bundle/vim-latex
 	url = https://github.com/vim-latex/vim-latex.git
 [submodule "vim/bundle/calendar.vim"]
-	path = vim/bundle/calendar.vim
+	path = vim/.vim/bundle/calendar.vim
 	url = https://github.com/itchyny/calendar.vim.git
 [submodule "vim/bundle/vim-log-highlighting"]
-	path = vim/bundle/vim-log-highlighting
+	path = vim/.vim/bundle/vim-log-highlighting
 	url = https://github.com/MTDL9/vim-log-highlighting.git
 [submodule "zsh/custom/plugins/fzf-tab"]
 	path = fzf/.oh-my-zsh/custom/plugins/fzf-tab
