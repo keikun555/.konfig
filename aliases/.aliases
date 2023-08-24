@@ -1,0 +1,21 @@
+alias cd..='cd ..'
+alias cp='cp -i'
+alias c='clear'
+alias df='df -h -x supermount -x"squashfs" -h'
+alias du='du -h'
+alias egrep='egrep --color'
+alias fgrep='fgrep --color'
+alias grep='grep --color'
+alias l='ls'
+alias la='ls -a'
+alias latr='ls -latrh'
+alias latr1='ls -latrh1'
+alias ll='ls -lh'
+alias ls='ls -F --color=auto'
+alias lsd='ls -d */'
+alias mv='mv -i'
+alias rm='rm -i'
+
+function cht {
+  curl cht.sh/$1
+}
