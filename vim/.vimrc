@@ -13,14 +13,14 @@ call vundle#begin('~/.vim/bundle/')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --ts-completer' }
+Plugin 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plugin 'flazz/vim-colorschemes'
 Plugin 'mhinz/vim-signify'
-Plugin 'junegunn/fzf', { 'dir': '~/.vim/', 'do': './install --all' }
+Plugin 'junegunn/fzf', { 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-eunuch'
