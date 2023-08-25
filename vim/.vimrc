@@ -13,7 +13,7 @@ call vundle#begin('~/.vim/bundle/')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plugin 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -26,7 +26,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-surround'
 Plugin 'mattn/emmet-vim'
-Plugin 'w0rp/ale'
+Plugin 'dense-analysis/ale'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-commentary'
 Plugin 'xolox/vim-misc'
@@ -393,5 +393,14 @@ endif
 " more from ben...
 let spell_language_list = "american"
 
+" Function to source only if file exists {
+function! SourceIfExists(file)
+  if filereadable(expand(a:file))
+    exe 'source' a:file
+  endif
+endfunction
+" }
+
+call SourceIfExists("~/.vimrc_local")
 " end .vimrc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
