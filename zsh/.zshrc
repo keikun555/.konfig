@@ -93,6 +93,8 @@ source $HOME/.p10k.zsh
 # export MANPATH="/usr/local/man:$MANPATH"
 export PATH=$HOME/bin:$PATH
 
+export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
