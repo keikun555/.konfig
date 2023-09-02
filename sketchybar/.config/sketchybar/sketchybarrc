@@ -86,20 +86,30 @@ sketchybar --add item space_separator left                         \
 
 sketchybar --add item clock right                              \
            --set clock   update_freq=10                        \
+                         icon.color=0xff000000                 \
+                         label.color=0xff000000                \
                          icon=                                \
                          script="$PLUGIN_DIR/clock.sh"         \
                                                                \
            --add item wifi right                               \
-           --set wifi    script="$PLUGIN_DIR/wifi.sh"          \
+           --set wifi                                          \
+                         icon.color=0xff000000                 \
+                         label.color=0xff000000                \
+                         script="$PLUGIN_DIR/wifi.sh"          \
                          icon=                                \
            --subscribe wifi wifi_change                        \
                                                                \
            --add item volume right                             \
-           --set volume  script="$PLUGIN_DIR/volume.sh"        \
+           --set volume                                        \
+                         icon.color=0xff000000                 \
+                         label.color=0xff000000                \
+                         script="$PLUGIN_DIR/volume.sh"        \
            --subscribe volume volume_change                    \
                                                                \
            --add item battery right                            \
            --set battery script="$PLUGIN_DIR/battery.sh"       \
+                         icon.color=0xff000000                 \
+                         label.color=0xff000000                \
                          update_freq=120                       \
            --subscribe battery system_woke power_source_change
 
@@ -107,4 +117,4 @@ sketchybar --add item clock right                              \
 # The below command is only needed at the end of the initial configuration to
 # force all scripts to run the first time, it should never be run in an item script.
 
-# sketchybar --update
+sketchybar --update

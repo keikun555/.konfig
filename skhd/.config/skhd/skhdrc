@@ -63,4 +63,4 @@ alt - h : yabai -m window --insert east;  skhd -k "cmd - n"
 alt - v : yabai -m window --insert south; skhd -k "cmd - n"
 
 # Make window zoom to fullscreen: alt - f
-alt - f : yabai -m window --toggle zoom-fullscreen; sketchybar --trigger window_focus
+alt - f : yabai -m window --toggle native-fullscreen; sketchybar --trigger window_focus
