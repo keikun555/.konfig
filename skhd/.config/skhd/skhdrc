@@ -56,7 +56,7 @@ shift + alt - 9 : SPACES=($(yabai -m query --displays --display | jq '.spaces[]'
 shift + alt - 0 : SPACES=($(yabai -m query --displays --display | jq '.spaces[]')) && [[ -n $SPACES[10] ]] \
                   && yabai -m window --space $SPACES[10] \
 
-alt - return : /Applications/Alacritty.app/Contents/MacOS/alacritty msg create-window
+alt - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
 
 # New window in hor./ vert. splits for all applications with yabai
 alt - h : yabai -m window --insert east;  skhd -k "cmd - n"
