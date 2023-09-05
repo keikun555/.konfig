@@ -18,7 +18,7 @@ yabai -m signal --add event=window_destroyed action="sketchybar --trigger window
 $HOME/.config/yabai/create_spaces.sh
 
 # window color and border configs
-yabai -m config external_bar               all:20:0     \
+yabai -m config external_bar               all:30:0     \
                 window_border              on           \
                 mouse_follows_focus        on           \
                 focus_follows_mouse        autofocus    \
