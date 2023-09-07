@@ -111,7 +111,13 @@ sketchybar --add item clock right                              \
                          icon.color=0xff000000                 \
                          label.color=0xff000000                \
                          update_freq=120                       \
-           --subscribe battery system_woke power_source_change
+           --subscribe battery system_woke power_source_change \
+           --add item vpn right                                \
+           --set vpn     icon=                                \
+                         icon.color=0xff000000                 \
+                         label.color=0xff000000                \
+                         update_freq=5                         \
+                         script="$PLUGIN_DIR/vpn.sh"           \
 
 ##### Finalizing Setup #####
 # The below command is only needed at the end of the initial configuration to
