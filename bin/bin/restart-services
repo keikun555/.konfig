@@ -1,0 +1,4 @@
+#!/bin/sh
+skhd --restart-service
+yabai --restart-service
+brew services restart sketchybar
