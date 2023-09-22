@@ -9,6 +9,8 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
+# Need OMZ to be in a git repo that stow doesn't provide
+# export ZSH="$HOME/.konfig/oh-my-zsh/.oh-my-zsh"
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
@@ -123,3 +125,8 @@ export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -f ~/.aliases ] && source ~/.aliases
+
+[ -f ~/.specific ] && source ~/.specific
+
+# rust
+[ -f ~/.cargo/env ] && source ~/.cargo/env
