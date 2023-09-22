@@ -1,10 +1,10 @@
 alt - e : yabai -m space --layout bsp
 alt - s : yabai -m space --layout stack
 
-alt - down : yabai -m window --focus stack.next || yabai -m window --focus south || yabai -m display --focus south
-alt - up : yabai -m window --focus stack.prev || yabai -m window --focus north || yabai -m display --focus north
-alt - left : yabai -m window --focus west || yabai -m display --focus west
-alt - right : yabai -m window --focus east || yabai -m display --focus east
+alt - down : yabai -m window --focus south || yabai -m display --focus south
+alt - up : yabai -m window --focus north || yabai -m display --focus north
+alt - left : yabai -m window --focus stack.prev || yabai -m window --focus west || yabai -m display --focus west
+alt - right : yabai -m window --focus stack.next || yabai -m window --focus east || yabai -m display --focus east
 
 # Space Navigation (ten spaces per display): alt - {1, 2, 3, 4, 5, 6, 7, 8, 9, 0}
 alt - 1 : SPACES=($(yabai -m query --displays --display | jq '.spaces[]')) && [[ -n $SPACES[1] ]] && yabai -m space --focus $SPACES[1]
