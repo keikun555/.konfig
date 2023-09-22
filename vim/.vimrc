@@ -71,6 +71,10 @@ let g:tex_flavor='latex'
 " Put your non-Plugin stuff after this line
 " we want react to detect changes
 set backupcopy=yes
+" fast tty and lazyredraw
+set ttyfast
+set lazyredraw
+
 
 " calendar.vim
 " get google stuff
@@ -93,6 +97,7 @@ let g:ycm_add_preview_to_completeopt = 0
 let g:ale_linters = {
 \   'typescript.tsx': ['tslint'],
 \}
+let g:ale_python_auto_virtualenv = 1
 
 
 "python with virtualenv support
@@ -115,6 +120,7 @@ let g:user_emmet_settings = {
             \}
 " Other plugin configs
 let NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
+nmap <C-e> :NERDTreeToggle<CR>
 nmap <F9> :TagbarToggle<CR>
 " Other stuff
 " Color scheme stuff
@@ -141,7 +147,7 @@ let g:airline_theme='hybrid'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
-colorscheme Benokai
+" colorscheme Benokai
 colorscheme hybrid
 " This is only necessary if you use "set termguicolors".
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
