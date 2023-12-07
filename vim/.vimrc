@@ -38,6 +38,7 @@ Plugin 'itchyny/calendar.vim'
 Plugin 'dkarter/bullets.vim'
 " Plugin 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 " Plugin 'vim-latex/vim-latex'
+Plugin 'lervag/vimtex'
 " Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'Chiel92/vim-autoformat'
 " typescript/javascript
@@ -84,7 +85,6 @@ let g:calendar_google_task = 1
 " vim-session don't ask when going on blank vim
 let g:session_autoload = 'no'
 let g:session_autosave = 'no'
-set shell=/usr/bin/zsh
 
 " encoding stuff for YouCompleteMe
 set encoding=utf-8
