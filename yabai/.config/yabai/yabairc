@@ -10,8 +10,8 @@ sudo yabai --load-sa
 
 
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
-yabai -m signal --add event=display_added action="sleep 2 && $HOME/.config/yabai/create_spaces.sh"
-yabai -m signal --add event=display_removed action="sleep 1 && $HOME/.config/yabai/create_spaces.sh"
+yabai -m signal --add event=display_added action="sleep 2 && $HOME/.config/yabai/create_spaces.sh; $HOME/.config/yabai/configure_spaces.sh"
+yabai -m signal --add event=display_removed action="sleep 2 && $HOME/.config/yabai/create_spaces.sh; $HOME/.config/yabai/configure_spaces.sh"
 yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
 yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
 
@@ -19,7 +19,7 @@ $HOME/.config/yabai/create_spaces.sh
 
 # window color and border configs
 yabai -m config external_bar               all:0:0      \
-                window_border              on           \
+                window_border              off          \
                 mouse_follows_focus        on           \
                 focus_follows_mouse        autofocus    \
                 window_zoom_persist        off          \
@@ -29,7 +29,7 @@ yabai -m config external_bar               all:0:0      \
                 window_opacity             on           \
                 window_opacity_duration    0.15         \
                 active_window_opacity      1.0          \
-                normal_window_opacity      0.95         \
+                normal_window_opacity      0.90         \
                 window_border_width        1            \
                 window_border_hidpi        off          \
                 window_border_radius       11           \
