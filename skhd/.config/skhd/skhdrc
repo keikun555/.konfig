@@ -64,6 +64,10 @@ alt - v : yabai -m window --insert south; skhd -k "cmd - n"
 
 # Make window zoom to fullscreen: alt - f
 alt - f : yabai -m window --toggle zoom-fullscreen; \
-          yabai -m space toggle gap; \
           yabai -m window --focus "$(yabai -m query --windows --window | jq -er .id)"; \
-          yabai -m space --toggle padding &
+#           yabai -m space --toggle gap; \
+#           yabai -m space --toggle padding &
+
+# Toggle gap
+alt - g : yabai -m space --toggle gap; \
+          yabai -m space --toggle padding
