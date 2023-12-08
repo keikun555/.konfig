@@ -130,3 +130,6 @@ export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 
 # rust
 [ -f ~/.cargo/env ] && source ~/.cargo/env
+
+# dbus for Zathura in Mac
+export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
