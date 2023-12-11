@@ -1,3 +1,6 @@
+alias connect-vpn="echo -e \"\$(bw get password vpn)\n\$(bw get notes vpn)\" | sudo openconnect cuvpn.cuvpn.cornell.edu --user \$(bw get username vpn) --passwd-on-stdin --script='vpn-slice vpn1-asa.cuvpn.cornell.edu vpn2-asa.cuvpn.cornell.edu vpn3-asa.cuvpn.cornell.edu atlas-21.cs.cornell.edu 128.84.155.84' --background --quiet"
+alias disconnect-vpn="sudo killall -SIGINT openconnect"
+
 alias cd..='cd ..'
 alias cp='cp -i'
 alias c='clear'
@@ -18,4 +21,8 @@ alias rm='rm -i'
 
 function cht {
   curl cht.sh/$1
+}
+
+function bwlogin {
+  export BW_SESSION=$(BWPW=$(sudo cat $1) bw unlock --passwordenv BWPW --raw || bw login --passwordenv BWPW --raw)
 }
