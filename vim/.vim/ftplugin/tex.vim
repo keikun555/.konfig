@@ -9,9 +9,9 @@ syntax enable
 
 " Viewer options: One may configure the viewer either by specifying a built-in
 " viewer method:
-" let g:vimtex_view_method = 'zathura'
+let g:vimtex_view_method = 'zathura'
 " let g:vimtex_view_method = 'zathura_simple'
-let g:vimtex_view_method = 'sioyek'
+" let g:vimtex_view_method = 'sioyek'
 
 " Or with a generic interface:
 " let g:vimtex_view_general_viewer = 'okular'
@@ -28,8 +28,15 @@ let g:vimtex_view_method = 'sioyek'
 " following line. The default is usually fine and is the symbol "\".
 " let maplocalleader = ","
 
-" let g:vimtex_view_zathura_hook_callback = 'MyZathuraCallbackHook'
+let g:vimtex_view_zathura_hook_callback = 'MyZathuraCallbackHook'
 
-" function! MyZathuraCallbackHook() dict
-"   call self.xwin_send_keys('R')
-" endfunction
+function! MyZathuraCallbackHook() dict
+  call self.xwin_send_keys('R')
+endfunction
+
+if empty(v:servername) && exists('*remote_startserver')
+  call remote_startserver('VIM')
+endif
+
+set conceallevel=2
+highlight clear Conceal

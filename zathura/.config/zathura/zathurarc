@@ -2,8 +2,8 @@ set selection-clipboard clipboard
 set recolor-keephue true
 set font "monospace normal 12"
 # colors
-# set recolor-darkcolor  "#FFFFFF"
-# set recolor-lightcolor "#333333"
+set recolor-darkcolor  "#FFFFFF"
+set recolor-lightcolor "#333333"
 # set statusbar-fg "#000000"
 # set statusbar-bg "#C2BFA5"
 set inputbar-fg "#000000"

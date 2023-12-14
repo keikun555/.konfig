@@ -13,7 +13,9 @@ call vundle#begin('~/.vim/bundle/')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
+Plugin 'Valloric/YouCompleteMe'
+    let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+    let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -40,7 +42,14 @@ Plugin 'dkarter/bullets.vim'
 " Plugin 'vim-latex/vim-latex'
 Plugin 'lervag/vimtex'
 " Plugin 'dhruvasagar/vim-table-mode'
-Plugin 'Chiel92/vim-autoformat'
+" Plugin 'Chiel92/vim-autoformat' " This is done with ale
+Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'ervandew/supertab'
+    let g:SuperTabDefaultCompletionType = '<C-n>'
+Plugin 'SirVer/ultisnips'
+    let g:UltiSnipsExpandTrigger = "<tab>"
+    let g:UltiSnipsJumpForwardTrigger = "<tab>"
+    let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 " typescript/javascript
 " Plugin 'pangloss/vim-javascript'
 " Plugin 'mxw/vim-jsx'
@@ -100,6 +109,7 @@ let g:ale_linters = {
 \   'typescript.tsx': ['tslint'],
 \}
 let g:ale_python_auto_virtualenv = 1
+let g:airline#extensions#ale#enabled = 1
 
 
 "python with virtualenv support
