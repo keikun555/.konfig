@@ -76,6 +76,8 @@ set backupcopy=yes
 set ttyfast
 set lazyredraw
 
+" MacVim remove scrollbar
+set guioptions=
 
 " calendar.vim
 " get google stuff
