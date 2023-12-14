@@ -14,11 +14,25 @@ call vundle#begin('~/.vim/bundle/')
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
+    " encoding stuff for YouCompleteMe
+    set encoding=utf-8
+    let g:ycm_filetype_blacklist = { 'typescript.tsx': 1 }
+    " Don't show YCM's preview window [ I find it really annoying ]
+    set completeopt-=preview
+    let g:ycm_add_preview_to_completeopt = 0
+    " Compatibility with UltiSnippets using supertab
     let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
     let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 Plugin 'scrooloose/nerdtree'
+    let NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
+    nmap <C-e> :NERDTreeToggle<CR>
+    nmap <F9> :TagbarToggle<CR>
 Plugin 'vim-airline/vim-airline'
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+    let g:airline#extensions#ale#enabled = 1
 Plugin 'vim-airline/vim-airline-themes'
+    let g:airline_theme='hybrid'
 Plugin 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plugin 'flazz/vim-colorschemes'
 Plugin 'mhinz/vim-signify'
@@ -28,19 +42,37 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-surround'
 Plugin 'mattn/emmet-vim'
+    " Emmet with jsx
+    let g:user_emmet_leader_key='<Tab>'
+    let g:user_emmet_settings = {
+                \  'javascript.jsx' : {
+                \      'extends' : 'jsx',
+                \  },
+                \}
 Plugin 'dense-analysis/ale'
+    let g:ale_linters = {
+    \   'typescript.tsx': ['tslint'],
+    \}
+    let g:ale_python_auto_virtualenv = 1
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-commentary'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 Plugin 'xolox/vim-session'
+    " vim-session don't ask when going on blank vim
+    let g:session_autoload = 'no'
+    let g:session_autosave = 'no'
 Plugin 'tpope/vim-obsession'
 Plugin 'itchyny/calendar.vim'
+    " get google stuff
+    let g:calendar_google_calendar = 1
+    let g:calendar_google_task = 1
 " Plugin 'vimwiki/vimwiki'
 Plugin 'dkarter/bullets.vim'
 " Plugin 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 " Plugin 'vim-latex/vim-latex'
 Plugin 'lervag/vimtex'
+    let g:tex_flavor='latex'
 " Plugin 'dhruvasagar/vim-table-mode'
 " Plugin 'Chiel92/vim-autoformat' " This is done with ale
 Plugin 'ludovicchabant/vim-gutentags'
@@ -67,7 +99,6 @@ filetype plugin indent on    " required
 " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " The following changes the default filetype back to 'tex':
-let g:tex_flavor='latex'
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -88,30 +119,6 @@ set lazyredraw
 " MacVim remove scrollbar
 set guioptions=
 
-" calendar.vim
-" get google stuff
-let g:calendar_google_calendar = 1
-let g:calendar_google_task = 1
-
-" vim-session don't ask when going on blank vim
-let g:session_autoload = 'no'
-let g:session_autosave = 'no'
-
-" encoding stuff for YouCompleteMe
-set encoding=utf-8
-let g:ycm_filetype_blacklist = { 'typescript.tsx': 1 }
-" Don't show YCM's preview window [ I find it really annoying ]
-set completeopt-=preview
-let g:ycm_add_preview_to_completeopt = 0
-
-" for ALE
-let g:ale_linters = {
-\   'typescript.tsx': ['tslint'],
-\}
-let g:ale_python_auto_virtualenv = 1
-let g:airline#extensions#ale#enabled = 1
-
-
 "python with virtualenv support
 " py << EOF
 " import os
@@ -123,44 +130,21 @@ let g:airline#extensions#ale#enabled = 1
 " EOF
 " set working directory the same as editing file
 set autochdir
-" Emmet with jsx
-let g:user_emmet_leader_key='<Tab>'
-let g:user_emmet_settings = {
-            \  'javascript.jsx' : {
-            \      'extends' : 'jsx',
-            \  },
-            \}
-" Other plugin configs
-let NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
-nmap <C-e> :NERDTreeToggle<CR>
-nmap <F9> :TagbarToggle<CR>
-" Other stuff
+
 " Color scheme stuff
 " This is only necessary if you use "set termguicolors".
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
-" for typescript files
-set backupcopy=yes
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
-autocmd BufNewFile,BufRead *.ts,*.js set filetype=typescript.jsx
-filetype plugin on
-syntax on
-let g:airline_theme='hybrid'
-colorscheme Benokai
 colorscheme hybrid
+
 " for typescript files
 set backupcopy=yes
 autocmd BufNewFile *.tsx,*.jsx set filetype=typescript.tsx
 autocmd BufNewFile *.ts,*.js set filetype=typescript.jsx
 filetype plugin on
 syntax on
-let g:airline_theme='hybrid'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
-" colorscheme Benokai
-colorscheme hybrid
 " This is only necessary if you use "set termguicolors".
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
