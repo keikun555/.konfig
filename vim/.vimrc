@@ -51,9 +51,11 @@ Plugin 'mattn/emmet-vim'
                 \}
 Plugin 'dense-analysis/ale'
     let g:ale_linters = {
+    \   '*': ['remove_trailing_lines', 'trim_whitespace'],
     \   'typescript.tsx': ['tslint'],
     \}
     let g:ale_python_auto_virtualenv = 1
+    nmap <C-\> :ALEFix<CR>
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-commentary'
 Plugin 'xolox/vim-misc'
@@ -72,7 +74,6 @@ Plugin 'dkarter/bullets.vim'
 " Plugin 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 " Plugin 'vim-latex/vim-latex'
 Plugin 'lervag/vimtex'
-    let g:tex_flavor='latex'
 " Plugin 'dhruvasagar/vim-table-mode'
 " Plugin 'Chiel92/vim-autoformat' " This is done with ale
 Plugin 'ludovicchabant/vim-gutentags'
@@ -82,6 +83,7 @@ Plugin 'SirVer/ultisnips'
     let g:UltiSnipsExpandTrigger = "<tab>"
     let g:UltiSnipsJumpForwardTrigger = "<tab>"
     let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+Plugin 'honza/vim-snippets'
 " typescript/javascript
 " Plugin 'pangloss/vim-javascript'
 " Plugin 'mxw/vim-jsx'

@@ -1,5 +1,29 @@
-snippet beg "begin{} / end{}" bA
+snippet beg "begin{} / end{}" b
 \\begin{$1}
-    $0
+  $0
 \\end{$1}
+endsnippet
+
+snippet cnj "begin{conj} / end{conj}" b
+\\begin{conj}
+  $0
+\\end{conj}
+endsnippet
+
+snippet prf "begin{prf} / end{prf}" b
+\\begin{prf}
+  $0
+\\end{prf}
+endsnippet
+
+snippet align "begin{align*} / end{align*}" b
+\\begin{align*}
+  $0
+\\end{align*}
+endsnippet
+
+snippet enuma "\begin{enumerate}[label=(\alph*)] / \end{enumerate}"
+\\begin{enumerate}[label=(\alph*)]
+  \\item $0
+\\end{enumerate}
 endsnippet
