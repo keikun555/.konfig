@@ -96,6 +96,9 @@ Plugin 'honza/vim-snippets'
 " Plugin 'godlygeek/csapprox'
 " Plugin 'mtdl9/vim-log-highlighting'
 " All of your Plugins must be added before the following line
+" AI assistant
+Plugin 'github/copilot.vim'
+Plugin 'CoderCookE/vim-chatgpt'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
