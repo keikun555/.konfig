@@ -4,6 +4,7 @@ DESIRED_SPACES_PER_DISPLAY=10
 CURRENT_SPACES="$(yabai -m query --displays | jq -r '.[].spaces | @sh')"
 
 DELTA=0
+DISPLAY=1
 while read -r line
 do
   LAST_SPACE="$(echo "${line##* }")"
@@ -13,17 +14,20 @@ do
   if [ "$MISSING_SPACES" -gt 0 ]; then
     for i in $(seq 1 $MISSING_SPACES)
     do
-      yabai -m space --create "$LAST_SPACE"
+      echo yabai -m space --create "$LAST_SPACE"
+      yabai -m space --create $DISPLAY
       LAST_SPACE=$(($LAST_SPACE+1))
     done
   elif [ "$MISSING_SPACES" -lt 0 ]; then
     for i in $(seq 1 $((-$MISSING_SPACES)))
     do
+      echo yabai -m space --destroy "$LAST_SPACE"
       yabai -m space --destroy "$LAST_SPACE"
       LAST_SPACE=$(($LAST_SPACE-1))
     done
   fi
   DELTA=$(($DELTA+$MISSING_SPACES))
+  DISPLAY=$(($DISPLAY+1))
 done <<< "$CURRENT_SPACES"
 
 sketchybar --trigger space_change --trigger windows_on_spaces

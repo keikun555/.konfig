@@ -73,4 +73,8 @@ alt - g : yabai -m space --toggle gap; \
           yabai -m space --toggle padding
 
 # Reconfigure spaces
-shift + alt - c : $HOME/.config/yabai/create_spaces.sh; $HOME/.config/yabai/configure_spaces.sh
+shift + alt - c : $HOME/.config/yabai/create_spaces.sh; $HOME/.config/yabai/configure_spaces.sh; $HOME/.config/yabai/desktop
+
+# Troll desktop picture
+shift + alt - n : automator -i ~/Pictures/nootnoot.jpeg ~/workflow/allDesktops.workflow
+shift + alt - d : automator -i ~/Pictures/danbo.jpg ~/workflow/allDesktops.workflow
