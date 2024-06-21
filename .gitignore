@@ -1,6 +1,5 @@
 *.swp
-vim/.vim/bundle/*
-!vim/.vim/bundle/Vundle.vim
+vim/.vim/plugged/*
 
 vim/.vim/sessions/*
 

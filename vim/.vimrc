@@ -5,15 +5,12 @@
 " Just Vundle things
 set nocompatible
 filetype off
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-"call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-call vundle#begin('~/.vim/bundle/')
+
+call plug#begin()
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
+Plug 'VundleVim/Vundle.vim'
+Plug 'Valloric/YouCompleteMe'
     " encoding stuff for YouCompleteMe
     set encoding=utf-8
     let g:ycm_filetype_blacklist = { 'typescript.tsx': 1 }
@@ -23,25 +20,25 @@ Plugin 'Valloric/YouCompleteMe'
     " Compatibility with UltiSnippets using supertab
     let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
     let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
     let NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
     nmap <C-e> :NERDTreeToggle<CR>
     nmap <F9> :TagbarToggle<CR>
-Plugin 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
     let g:airline#extensions#ale#enabled = 1
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
     let g:airline_theme='hybrid'
-Plugin 'rdnetto/YCM-Generator', { 'branch': 'stable'}
-Plugin 'flazz/vim-colorschemes'
-Plugin 'mhinz/vim-signify'
-Plugin 'junegunn/fzf', { 'do': './install --all' }
-Plugin 'junegunn/fzf.vim'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-surround'
-Plugin 'mattn/emmet-vim'
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+Plug 'flazz/vim-colorschemes'
+Plug 'mhinz/vim-signify'
+Plug 'junegunn/fzf', { 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-surround'
+Plug 'mattn/emmet-vim'
     " Emmet with jsx
     let g:user_emmet_leader_key='<Tab>'
     let g:user_emmet_settings = {
@@ -49,71 +46,59 @@ Plugin 'mattn/emmet-vim'
                 \      'extends' : 'jsx',
                 \  },
                 \}
-Plugin 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
     let g:ale_linters = {
     \   '*': ['remove_trailing_lines', 'trim_whitespace'],
     \   'typescript.tsx': ['tslint'],
     \}
     let g:ale_python_auto_virtualenv = 1
     nmap <C-\> :ALEFix<CR>
-Plugin 'majutsushi/tagbar'
-Plugin 'tpope/vim-commentary'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-notes'
-Plugin 'xolox/vim-session'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-commentary'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-notes'
+Plug 'xolox/vim-session'
     " vim-session don't ask when going on blank vim
     let g:session_autoload = 'no'
     let g:session_autosave = 'no'
-Plugin 'tpope/vim-obsession'
-Plugin 'itchyny/calendar.vim'
+Plug 'tpope/vim-obsession'
+Plug 'itchyny/calendar.vim'
     " get google stuff
     let g:calendar_google_calendar = 1
     let g:calendar_google_task = 1
-" Plugin 'vimwiki/vimwiki'
-Plugin 'dkarter/bullets.vim'
-" Plugin 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-" Plugin 'vim-latex/vim-latex'
-Plugin 'lervag/vimtex'
-" Plugin 'dhruvasagar/vim-table-mode'
-" Plugin 'Chiel92/vim-autoformat' " This is done with ale
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'ervandew/supertab'
+" Plug 'vimwiki/vimwiki'
+Plug 'dkarter/bullets.vim'
+" Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+" Plug 'vim-latex/vim-latex'
+Plug 'lervag/vimtex'
+" Plug 'dhruvasagar/vim-table-mode'
+" Plug 'Chiel92/vim-autoformat' " This is done with ale
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'ervandew/supertab'
     let g:SuperTabDefaultCompletionType = '<C-n>'
-Plugin 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
     let g:UltiSnipsExpandTrigger = "<tab>"
     let g:UltiSnipsJumpForwardTrigger = "<tab>"
     let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-Plugin 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 " typescript/javascript
-" Plugin 'pangloss/vim-javascript'
-" Plugin 'mxw/vim-jsx'
-" Plugin 'leafgarland/typescript-vim'
-" Plugin 'peitalin/vim-jsx-typescript'
-" Plugin 'Quramy/tsuquyomi'
-" Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
+" Plug 'pangloss/vim-javascript'
+" Plug 'mxw/vim-jsx'
+" Plug 'leafgarland/typescript-vim'
+" Plug 'peitalin/vim-jsx-typescript'
+" Plug 'Quramy/tsuquyomi'
+" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
-" Plugin 'ap/vim-css-color'
-" Plugin 'godlygeek/csapprox'
-" Plugin 'mtdl9/vim-log-highlighting'
-" All of your Plugins must be added before the following line
+" Plug 'ap/vim-css-color'
+" Plug 'godlygeek/csapprox'
+" Plug 'mtdl9/vim-log-highlighting'
+" All of your Plugs must be added before the following line
 " AI assistant
-Plugin 'github/copilot.vim'
-Plugin 'CoderCookE/vim-chatgpt'
-call vundle#end()            " required
-filetype plugin indent on    " required
-" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
-" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
-" The following changes the default filetype back to 'tex':
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
+Plug 'github/copilot.vim'
+Plug 'CoderCookE/vim-chatgpt'
+
+call plug#end()
+
 " Put your non-Plugin stuff after this line
 " we want react to detect changes
 set backupcopy=yes

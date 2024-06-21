@@ -78,9 +78,6 @@ window:
   # Set this to `None` to use the default theme variant.
   gtk_theme_variant: None
 
-  # Remove titlebar
-  decorations: None
-
 scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
