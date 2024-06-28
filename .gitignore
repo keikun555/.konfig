@@ -4,5 +4,7 @@ vim/.vim/plugged/*
 vim/.vim/sessions/*
 
 tmux/.tmux/resurrect/*
+tmux/.tmux/plugins/*
+!tmux/.tmux/plugins/tpm
 
 .netrwhist
