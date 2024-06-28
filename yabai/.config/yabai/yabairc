@@ -48,6 +48,9 @@ yabai -m config external_bar               all:0:0      \
                 left_padding               5            \
                 right_padding              5            \
                 window_gap                 3
+# Special Sioyek
+# https://github.com/ahrm/sioyek/issues/962
+yabai -m rule --add app="sioyek" role="AXWindow" subrole="AXDialog" manage=on
 
 # Exclude problematic apps from being managed:
 yabai -m rule --add app="^(Calculator|Software Update|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Activity Monitor|Cisco AnyConnect Secure Mobility Client)$" manage=off
