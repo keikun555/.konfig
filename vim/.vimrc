@@ -96,6 +96,8 @@ Plug 'honza/vim-snippets'
 " AI assistant
 Plug 'github/copilot.vim'
 Plug 'CoderCookE/vim-chatgpt'
+" Coq
+Plug 'whonore/Coqtail'
 
 call plug#end()
 
