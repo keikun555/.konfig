@@ -1,9 +1,8 @@
 configuration {
-  modi: "drun,window,ssh,combi";
+  modes: [drun, window, ssh, combi];
   show-icons: true;
-  theme: "Pop-Dark";
   font: "hack 12";
-  combi-modi: "window,drun,ssh";
+  combi-modes: [window,drun,ssh];
   terminal: "alacritty";
   display-run: "run ";
   display-ssh: "ssh ";
@@ -11,3 +10,5 @@ configuration {
   display-combi: "combi ";
   display-keys: "keys ";
 }
+//@theme "Pop-Dark"
+@theme "/usr/share/rofi/themes/glue_pro_blue.rasi"

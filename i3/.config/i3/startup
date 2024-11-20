@@ -1,0 +1,5 @@
+exec --no-startup-id alacritty
+exec --no-startup-id google-chrome --profile-directory=Default
+exec --no-startup-id google-chrome --profile-directory="Profile 1"
+exec --no-startup-id signal-desktop
+exec --no-startup-id slack

@@ -130,3 +130,7 @@ export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 
 # rust
 [ -f ~/.cargo/env ] && source ~/.cargo/env
+[ -d ~/.cargo/bin ] && export PATH=${PATH}:~/.cargo/bin
+
+# opam configuration
+[[ ! -r /home/kei/.opam/opam-init/init.zsh ]] || source /home/kei/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

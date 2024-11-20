@@ -73,7 +73,7 @@ Plug 'dkarter/bullets.vim'
 Plug 'lervag/vimtex'
 " Plug 'dhruvasagar/vim-table-mode'
 " Plug 'Chiel92/vim-autoformat' " This is done with ale
-Plug 'ludovicchabant/vim-gutentags'
+" Plug 'ludovicchabant/vim-gutentags'
 Plug 'ervandew/supertab'
     let g:SuperTabDefaultCompletionType = '<C-n>'
 Plug 'SirVer/ultisnips'
