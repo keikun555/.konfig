@@ -98,6 +98,11 @@ Plug 'github/copilot.vim'
 Plug 'CoderCookE/vim-chatgpt'
 " Coq
 Plug 'whonore/Coqtail'
+" faster folding
+Plug 'Konfekt/FastFold'
+    let g:fastfold_savehook = 1
+    let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
+    let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 
 call plug#end()
 
@@ -124,10 +129,6 @@ set guioptions=
 set autochdir
 
 " Color scheme stuff
-" This is only necessary if you use "set termguicolors".
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
 colorscheme hybrid
 
 " for typescript files

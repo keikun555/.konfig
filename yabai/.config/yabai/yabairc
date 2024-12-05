@@ -21,7 +21,7 @@ $HOME/.config/yabai/create_spaces.sh
 yabai -m config external_bar               all:0:0      \
                 window_border              off          \
                 mouse_follows_focus        on           \
-                focus_follows_mouse        autoraise    \
+                focus_follows_mouse        autofocus    \
                 window_zoom_persist        off          \
                 window_placement           second_child \
                 window_topmost             off          \

@@ -1,0 +1,28 @@
+version: "1"
+
+
+default:
+  repository: "rest:http://localhost:8080/"
+  password-file: "/Users/kei/backup/password"
+
+  backup:
+    exclude-file: "excludes"
+    exclude-caches: true
+    source:
+    - "/Users/kei"
+    schedule: daily
+    schedule-permission: system
+    schedule-lock-wait: 10m
+    schedule-after-network-online: true
+    schedule-ignore-on-battery: true
+    cache-dir: "/Users/kei/.cache/restic"
+
+  retention:
+    after-backup: true
+    keep-daily: 3
+    keep-weekly: 2
+    keep-monthly: 1
+    prune: true
+
+  profile:
+    status-file: /Users/kei/backup/status.json

@@ -73,5 +73,9 @@ alt - g : yabai -m window --toggle gap; \
 shift + alt - c : $HOME/.config/yabai/create_spaces.sh; $HOME/.config/yabai/configure_spaces.sh; $HOME/.config/yabai/desktop
 
 # Troll desktop picture
-shift + alt - n : automator -i ~/Pictures/nootnoot.jpeg ~/workflow/allDesktops.workflow
-shift + alt - d : automator -i ~/Pictures/danbo.jpg ~/workflow/allDesktops.workflow
+shift + alt - n : automator -i ~/wallpaper/nootnoot.jpg ~/workflow/allDesktops.workflow
+shift + alt - d : automator -i ~/wallpaper/danbo.jpeg ~/workflow/allDesktops.workflow
+
+# Save layout
+shift + alt - s : ~/.config/yabai/layout.sh
+shift + alt - l : ~/.config/yabai/layout/$(hostname)/desktop.sh

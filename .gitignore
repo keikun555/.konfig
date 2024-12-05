@@ -1,3 +1,4 @@
+.DS_Store
 *.swp
 vim/.vim/plugged/*
 
@@ -8,3 +9,8 @@ tmux/.tmux/plugins/*
 !tmux/.tmux/plugins/tpm
 
 .netrwhist
+
+yabai/.config/yabai/layout/*/**
+!yabai/.config/yabai/layout/README.md
+
+backup/backup/password

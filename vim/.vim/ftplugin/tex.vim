@@ -9,11 +9,19 @@ filetype plugin indent on
 " info).
 syntax enable
 
+" let g:vimtex_complete_ref = {
+"    \ 'custom_patterns': ['\\[esftESFT]ref\*\?{[^}]*$']
+"    \ }
+
+" let g:tex_fold_enabled = 0
+" let g:vimtex_fold_enabled = 1
+
 " Viewer options: One may configure the viewer either by specifying a built-in
 " viewer method:
-let g:vimtex_view_method = 'zathura'
+" let g:vimtex_view_method = 'zathura'
 " let g:vimtex_view_method = 'zathura_simple'
-" let g:vimtex_view_method = 'sioyek'
+let g:vimtex_view_method = 'sioyek'
+let g:vimtex_view_sioyek_exe = '/Applications/sioyek.app/Contents/MacOS/sioyek'
 
 " Or with a generic interface:
 " let g:vimtex_view_general_viewer = 'okular'
@@ -53,6 +61,7 @@ let g:vimtex_quickfix_ignore_filters = [
       \ 'Font shape',
       \ 'You have requested package',
       \ 'Empty bibliography',
+      \ 'float specifier changed to',
       \]
 
 let g:vimtex_compiler_latexmk = {
