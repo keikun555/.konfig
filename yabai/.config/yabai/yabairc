@@ -21,7 +21,7 @@ $HOME/.config/yabai/create_spaces.sh
 yabai -m config external_bar               all:0:0      \
                 window_border              off          \
                 mouse_follows_focus        on           \
-                focus_follows_mouse        autofocus    \
+                focus_follows_mouse        autoraise    \
                 window_zoom_persist        off          \
                 window_placement           second_child \
                 window_topmost             off          \
@@ -82,6 +82,8 @@ yabai -m signal --add event=application_terminated action="yabai -m query --wind
 
 # set default layout to bsp
 yabai -m config layout bsp
+
+yabai -m signal --add app="^Google Chrome$" event=window_title_changed action="yabai -m config focus_follows_mouse autoraise"
 
 $HOME/.config/yabai/configure_spaces.sh
 
