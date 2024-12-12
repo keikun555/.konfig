@@ -19,22 +19,15 @@ $HOME/.config/yabai/create_spaces.sh
 
 # window color and border configs
 yabai -m config external_bar               all:0:0      \
-                window_border              off          \
                 mouse_follows_focus        on           \
                 focus_follows_mouse        autoraise    \
                 window_zoom_persist        off          \
                 window_placement           second_child \
-                window_topmost             off          \
                 window_shadow              float        \
                 window_opacity             on           \
                 window_opacity_duration    0.15         \
                 active_window_opacity      1.0          \
                 normal_window_opacity      0.90         \
-                window_border_width        1            \
-                window_border_hidpi        off          \
-                window_border_radius       11           \
-                active_window_border_color 0xffe1e3e4   \
-                normal_window_border_color 0xff2a2f38   \
                 insert_feedback_color      0xff9dd274   \
                 split_ratio                0.50         \
                 auto_balance               off          \
@@ -48,16 +41,20 @@ yabai -m config external_bar               all:0:0      \
                 left_padding               5            \
                 right_padding              5            \
                 window_gap                 3
+                # window_border              off          \
+                # window_topmost             off          \
+                # window_border_width        1            \
+                # window_border_hidpi        off          \
+                # window_border_radius       11           \
+                # active_window_border_color 0xffe1e3e4   \
+                # normal_window_border_color 0xff2a2f38   \
 # Special Sioyek
 
 # If no window on the current space is focused after a window is destroyed or
 # minimized, or an application is hidden, focus the window under the cursor.
-yabai -m signal --add event=window_destroyed \
-  action="${functions[focus_under_cursor]}"
-yabai -m signal --add event=window_minimized \
-  action="${functions[focus_under_cursor]}"
-yabai -m signal --add event=application_hidden \
-  action="${functions[focus_under_cursor]}"
+yabai -m signal --add event=window_destroyed action="${functions[focus_under_cursor]}"
+yabai -m signal --add event=window_minimized action="${functions[focus_under_cursor]}"
+yabai -m signal --add event=application_hidden action="${functions[focus_under_cursor]}"
 
 function focus_under_cursor {
   if yabai -m query --windows --space |

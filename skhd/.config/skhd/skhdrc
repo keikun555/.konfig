@@ -66,7 +66,7 @@ alt - v : yabai -m window --insert south; skhd -k "cmd - n"
 alt - f : yabai -m window --toggle windowed-fullscreen; \
 
 # Toggle gap
-alt - g : yabai -m window --toggle gap; \
+alt - g : yabai -m space --toggle gap; \
           yabai -m space --toggle padding
 
 # Reconfigure spaces
