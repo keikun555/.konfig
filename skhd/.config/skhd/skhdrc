@@ -69,6 +69,10 @@ alt - f : yabai -m window --toggle windowed-fullscreen; \
 alt - g : yabai -m space --toggle gap; \
           yabai -m space --toggle padding
 
+# Equalize with alt - =
+alt - 0x18 : yabai -m space --equalize x-axis; \
+          yabai -m space --equalize y-axis
+
 # Reconfigure spaces
 shift + alt - c : $HOME/.config/yabai/create_spaces.sh; $HOME/.config/yabai/configure_spaces.sh; $HOME/.config/yabai/desktop
 

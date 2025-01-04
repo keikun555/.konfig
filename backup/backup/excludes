@@ -1,3 +1,5 @@
 ~/**/.*
 ~/backup/**/*
 ~/usb_backup/**/*
+~/Library/**/*
+~/Applications/**/*

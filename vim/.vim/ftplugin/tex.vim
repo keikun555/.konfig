@@ -62,6 +62,7 @@ let g:vimtex_quickfix_ignore_filters = [
       \ 'You have requested package',
       \ 'Empty bibliography',
       \ 'float specifier changed to',
+      \ 'standard defaults will be used',
       \]
 
 let g:vimtex_compiler_latexmk = {
