@@ -1,0 +1,11 @@
+#!/bin/bash
+
+pushd "/Users/kei/Applications/Kegworks/poe2.app/Contents/drive_c/Program Files (x86)/Grinding Gear Games/Path of Exile 2"
+
+mv PathOfExile.old.exe PathOfExile.old.old.exe
+mv PathOfExile.exe PathOfExile.old.exe
+mv PathOfExile.tmp PathOfExile.exe
+
+rm -f PathOfExile.old.old.exe
+
+popd

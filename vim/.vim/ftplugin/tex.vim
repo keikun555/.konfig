@@ -1,5 +1,8 @@
 let b:ale_fixers = ['latexindent']
 
+" let b:ale_linters = ['chktex', 'lacheck', 'cspell', 'proselint', 'textlint', 'write-good']
+let b:ale_linters = ['chktex']
+
 " This is necessary for VimTeX to load properly. The "indent" is optional.
 " Note that most plugin managers will do this automatically.
 filetype plugin indent on
@@ -63,13 +66,15 @@ let g:vimtex_quickfix_ignore_filters = [
       \ 'Empty bibliography',
       \ 'float specifier changed to',
       \ 'standard defaults will be used',
+      \ 'setting the option has no effect',
+      \ 'Package hyperref Warning: Draft mode on.',
       \]
 
 let g:vimtex_compiler_latexmk = {
     \ 'aux_dir' : '',
     \ 'out_dir' : '',
     \ 'callback' : 1,
-    \ 'continuous' : 1,
+    \ 'continuous' : 0,
     \ 'executable' : 'latexmk',
     \ 'hooks' : [],
     \ 'options' : [

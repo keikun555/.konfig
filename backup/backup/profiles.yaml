@@ -1,9 +1,15 @@
 version: "1"
 
+global:
+  restic-stale-lock-age: 2h
+
 
 default:
   repository: "rest:http://localhost:8080/"
   password-file: "/Users/kei/backup/password"
+
+  lock: "/tmp/resticprofile-profile-src.lock"
+  force-inactive-lock: true
 
   backup:
     exclude-file: "excludes"

@@ -1,5 +1,5 @@
-~/**/.*
-~/backup/**/*
-~/usb_backup/**/*
-~/Library/**/*
-~/Applications/**/*
+/Users/kei/**/.*
+/Users/kei/backup/**/*
+/Users/kei/usb_backup/**/*
+/Users/kei/Library/**/*
+/Users/kei/Applications/**/*
