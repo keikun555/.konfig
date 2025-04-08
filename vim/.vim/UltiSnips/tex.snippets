@@ -43,6 +43,12 @@ snippet prf "begin{prf} / end{prf}" b
 \\end{prf}
 endsnippet
 
+snippet proof "begin{proof} / end{proof}" b
+\\begin{proof}
+  $0
+\\end{proof}
+endsnippet
+
 snippet align "begin{align*} / end{align*}" b
 \\begin{align*}
   $0
@@ -59,4 +65,10 @@ snippet ex "begin{example} / end{example}" b
 \\begin{example}
   $0
 \\end{example}
+endsnippet
+
+snippet lst "begin{lstlisting}[language=...] / end{lstlisting}" b
+\\begin{lstlisting}[language=$1]
+  $0
+\\end{lstlisting}
 endsnippet
