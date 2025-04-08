@@ -1,4 +1,4 @@
 ----------------------------------------------------------------------
 -- My Ipe customizations: customization.lua
 ----------------------------------------------------------------------
-prefs.latex_service_url = "http://latexonline.cc"
+-- prefs.latex_service_url = "http://latexonline.cc"
