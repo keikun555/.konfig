@@ -5,6 +5,8 @@
 " Just Vundle things
 set nocompatible
 filetype off
+filetype plugin on
+filetype plugin indent on
 
 call plug#begin()
 
@@ -110,6 +112,9 @@ Plug 'lervag/vimtex'
     " VimTeX features will not work (see ":help vimtex-requirements" for more
     " info).
     syntax enable
+    if empty(v:servername) && exists('*remote_startserver')
+      call remote_startserver('VIM')
+    endif
 " Plug 'dhruvasagar/vim-table-mode'
 " Plug 'Chiel92/vim-autoformat' " This is done with ale
 " Plug 'ludovicchabant/vim-gutentags'
