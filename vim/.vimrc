@@ -177,6 +177,11 @@ set guioptions=
 " set working directory the same as editing file
 set autochdir
 
+" Typeface
+if has('gui_running')
+  set guifont=MesloLGS\ NF
+endif
+
 " Color scheme stuff
 colorscheme hybrid
 
