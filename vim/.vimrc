@@ -24,12 +24,14 @@ Plug 'scrooloose/nerdtree'
     let NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
     nmap <C-e> :NERDTreeToggle<CR>
     nmap <F9> :TagbarToggle<CR>
-Plug 'vim-airline/vim-airline'
-    let g:airline#extensions#tabline#enabled = 1
-    let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-    let g:airline#extensions#ale#enabled = 1
-Plug 'vim-airline/vim-airline-themes'
-    let g:airline_theme='hybrid'
+Plug 'itchyny/lightline.vim'
+    set laststatus=2
+    if !has('gui_running')
+      set t_Co=256
+    endif
+    let g:lightline = {
+      \ 'colorscheme': 'hybrid',
+      \ }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'flazz/vim-colorschemes'
 Plug 'mhinz/vim-signify'

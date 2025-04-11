@@ -70,6 +70,7 @@ let g:vimtex_quickfix_ignore_filters = [
       \ 'standard defaults will be used',
       \ 'setting the option has no effect',
       \ 'Package hyperref Warning: Draft mode on.',
+      \ 'LaTeX Warning: Unused global option',
       \]
 
 let g:vimtex_compiler_latexmk = {
