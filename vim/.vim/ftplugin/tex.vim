@@ -10,7 +10,9 @@ filetype plugin indent on
 " This enables Vim's and neovim's syntax-related features. Without this, some
 " VimTeX features will not work (see ":help vimtex-requirements" for more
 " info).
-syntax enable
+" This needs to be put into .vimrc, otherwise tab colors will break (I dunno
+" why).
+" syntax enable
 
 " let g:vimtex_complete_ref = {
 "    \ 'custom_patterns': ['\\[esftESFT]ref\*\?{[^}]*$']

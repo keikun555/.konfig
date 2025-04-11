@@ -106,6 +106,10 @@ Plug 'dkarter/bullets.vim'
 " Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 " Plug 'vim-latex/vim-latex'
 Plug 'lervag/vimtex'
+    " This enables Vim's and neovim's syntax-related features. Without this, some
+    " VimTeX features will not work (see ":help vimtex-requirements" for more
+    " info).
+    syntax enable
 " Plug 'dhruvasagar/vim-table-mode'
 " Plug 'Chiel92/vim-autoformat' " This is done with ale
 " Plug 'ludovicchabant/vim-gutentags'
