@@ -35,43 +35,47 @@ Plug 'itchyny/lightline.vim'
       \ 'colorscheme': 'hybrid',
       \ }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
-Plug 'flazz/vim-colorschemes'
 Plug 'mhinz/vim-signify'
+    " Need to do this before setting the colorscheme
+    autocmd ColorScheme hybrid highlight SignifySignAdd    ctermfg=10 guibg=#1d1f21 guifg=#b5bd68 cterm=NONE gui=NONE
+    autocmd ColorScheme hybrid highlight SignifySignDelete ctermfg=9  guibg=#1d1f21 guifg=#cc6666 cterm=NONE gui=NONE
+    autocmd ColorScheme hybrid highlight SignifySignChange ctermfg=9  guibg=#1d1f21 guifg=#81a2be cterm=NONE gui=NONE
+Plug 'flazz/vim-colorschemes'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-function! s:update_fzf_colors()
-  let rules =
-  \ { 'fg':      [['Normal',       'fg']],
-    \ 'bg':      [['Normal',       'bg']],
-    \ 'hl':      [['Comment',      'fg']],
-    \ 'fg+':     [['CursorColumn', 'fg'], ['Normal', 'fg']],
-    \ 'bg+':     [['CursorColumn', 'bg']],
-    \ 'hl+':     [['Statement',    'fg']],
-    \ 'info':    [['PreProc',      'fg']],
-    \ 'prompt':  [['Conditional',  'fg']],
-    \ 'pointer': [['Exception',    'fg']],
-    \ 'marker':  [['Keyword',      'fg']],
-    \ 'spinner': [['Label',        'fg']],
-    \ 'header':  [['Comment',      'fg']] }
-  let cols = []
-  for [name, pairs] in items(rules)
-    for pair in pairs
-      let code = synIDattr(synIDtrans(hlID(pair[0])), pair[1])
-      if !empty(name) && code > 0
-        call add(cols, name.':'.code)
-        break
-      endif
-    endfor
-  endfor
-  let s:orig_fzf_default_opts = get(s:, 'orig_fzf_default_opts', $FZF_DEFAULT_OPTS)
-  let $FZF_DEFAULT_OPTS = s:orig_fzf_default_opts .
-        \ empty(cols) ? '' : (' --color='.join(cols, ','))
-endfunction
+    function! s:update_fzf_colors()
+      let rules =
+      \ { 'fg':      [['Normal',       'fg']],
+        \ 'bg':      [['Normal',       'bg']],
+        \ 'hl':      [['Comment',      'fg']],
+        \ 'fg+':     [['CursorColumn', 'fg'], ['Normal', 'fg']],
+        \ 'bg+':     [['CursorColumn', 'bg']],
+        \ 'hl+':     [['Statement',    'fg']],
+        \ 'info':    [['PreProc',      'fg']],
+        \ 'prompt':  [['Conditional',  'fg']],
+        \ 'pointer': [['Exception',    'fg']],
+        \ 'marker':  [['Keyword',      'fg']],
+        \ 'spinner': [['Label',        'fg']],
+        \ 'header':  [['Comment',      'fg']] }
+      let cols = []
+      for [name, pairs] in items(rules)
+        for pair in pairs
+          let code = synIDattr(synIDtrans(hlID(pair[0])), pair[1])
+          if !empty(name) && code > 0
+            call add(cols, name.':'.code)
+            break
+          endif
+        endfor
+      endfor
+      let s:orig_fzf_default_opts = get(s:, 'orig_fzf_default_opts', $FZF_DEFAULT_OPTS)
+      let $FZF_DEFAULT_OPTS = s:orig_fzf_default_opts .
+            \ empty(cols) ? '' : (' --color='.join(cols, ','))
+    endfunction
 
-augroup _fzf
-  autocmd!
-  autocmd ColorScheme * call <sid>update_fzf_colors()
-augroup END
+    augroup _fzf
+      autocmd!
+      autocmd ColorScheme * call <sid>update_fzf_colors()
+    augroup END
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
@@ -132,8 +136,7 @@ Plug 'honza/vim-snippets'
 " Plug 'peitalin/vim-jsx-typescript'
 " Plug 'Quramy/tsuquyomi'
 " Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-
-" Plug 'ap/vim-css-color'
+Plug 'ap/vim-css-color'
 " Plug 'godlygeek/csapprox'
 " Plug 'mtdl9/vim-log-highlighting'
 " All of your Plugs must be added before the following line
