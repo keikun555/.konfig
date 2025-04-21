@@ -124,6 +124,10 @@ let g:vimtex_syntax_custom_cmds = [
 " \  'cchar_mid': '|',
 " \  'cchar_close': ')'},
 let g:vimtex_syntax_custom_cmds_with_concealed_delims = [
+    \ {'name': 'vtag',
+    \  'mathmode': 1,
+    \  'cchar_open': '〈',
+    \  'cchar_close': '〉'},
     \ {'name': 'ceil',
     \  'mathmode': 1,
     \  'cchar_open': '⌈',
