@@ -28,9 +28,6 @@ Plug 'scrooloose/nerdtree'
     nmap <F9> :TagbarToggle<CR>
 Plug 'itchyny/lightline.vim'
     set laststatus=2
-    if !has('gui_running')
-      set t_Co=256
-    endif
     let g:lightline = {
       \ 'colorscheme': 'hybrid',
       \ }
@@ -39,7 +36,7 @@ Plug 'mhinz/vim-signify'
     " Need to do this before setting the colorscheme
     autocmd ColorScheme hybrid highlight SignifySignAdd    ctermfg=10 guibg=#1d1f21 guifg=#b5bd68 cterm=NONE gui=NONE
     autocmd ColorScheme hybrid highlight SignifySignDelete ctermfg=9  guibg=#1d1f21 guifg=#cc6666 cterm=NONE gui=NONE
-    autocmd ColorScheme hybrid highlight SignifySignChange ctermfg=9  guibg=#1d1f21 guifg=#81a2be cterm=NONE gui=NONE
+    autocmd ColorScheme hybrid highlight SignifySignChange ctermfg=12 guibg=#1d1f21 guifg=#81a2be cterm=NONE gui=NONE
 Plug 'flazz/vim-colorschemes'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -182,7 +179,9 @@ set autochdir
 
 " Typeface
 if has('gui_running')
-  set guifont=MesloLGS\ NF
+  " set guifont=Menlo-Regular
+  set guifont=MesloLGS-NF-Regular
+  set encoding=utf-8
 endif
 
 " Color scheme stuff
