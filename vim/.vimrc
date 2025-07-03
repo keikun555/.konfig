@@ -153,6 +153,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+" Clojure
+Plug 'clojure-vim/clojure.vim'
 call plug#end()
 
 " Put your non-Plugin stuff after this line
@@ -182,6 +184,8 @@ if has('gui_running')
   " set guifont=Menlo-Regular
   set guifont=MesloLGS-NF-Regular
   set encoding=utf-8
+  command MonitorSize set guifont=MesloLGS-NF-Regular:h23
+  command LaptopSize set guifont=MesloLGS-NF-Regular:h14
 endif
 
 " Color scheme stuff

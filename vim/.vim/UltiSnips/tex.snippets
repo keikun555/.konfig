@@ -7,10 +7,40 @@ snippet la "leftarrow" w
 \leftarrow
 endsnippet
 
+snippet mpar "begin{mathpar} / end{mathpar}" b
+\\begin{mathpar}
+  $0
+\\end{mathpar}
+endsnippet
+
+snippet arr "begin{array}{} / end{array}" b
+\\begin{array}{$1}
+  $0
+\\end{array}
+endsnippet
+
+snippet def "begin{definition} / end{definition}" b
+\\begin{definition}[$1]
+  $0
+\\end{definition}
+endsnippet
+
+snippet rdef "begin{restatable}{definition}{} / end{restatable}" b
+\\begin{restatable}{definition}{def:$1}
+  $0
+\\end{restatable}
+endsnippet
+
 snippet thm "begin{thm} / end{thm}" b
 \\begin{thm}
   $0
 \\end{thm}
+endsnippet
+
+snippet rthm "begin{restatable}{thm}{} / end{restatable}" b
+\\begin{restatable}{thm}{thm:$1}
+  $0
+\\end{restatable}
 endsnippet
 
 snippet prop "begin{prop} / end{prop}" b
@@ -19,10 +49,34 @@ snippet prop "begin{prop} / end{prop}" b
 \\end{prop}
 endsnippet
 
+snippet rprop "begin{restatable}{prop}{} / end{restatable}" b
+\\begin{restatable}{prop}{prop:$1}
+  $0
+\\end{restatable}
+endsnippet
+
 snippet cor "begin{cor} / end{cor}" b
 \\begin{cor}
   $0
 \\end{cor}
+endsnippet
+
+snippet rcor "begin{restatable}{cor}{} / end{restatable}" b
+\\begin{restatable}{cor}{cor:$1}
+  $0
+\\end{restatable}
+endsnippet
+
+snippet lem "begin{lem} / end{lem}" b
+\\begin{lem}
+  $0
+\\end{lem}
+endsnippet
+
+snippet rlem "begin{restatable}{lem}{} / end{restatable}" b
+\\begin{restatable}{lem}{lem:$1}
+  $0
+\\end{restatable}
 endsnippet
 
 snippet beg "begin{} / end{}" b
@@ -65,6 +119,12 @@ snippet ex "begin{example} / end{example}" b
 \\begin{example}
   $0
 \\end{example}
+endsnippet
+
+snippet rex "begin{restatable}{example}{} / end{example}" b
+\\begin{restatable}{example}{ex:$1}
+  $0
+\\end{restatable}
 endsnippet
 
 snippet lst "begin{lstlisting}[language=...] / end{lstlisting}" b

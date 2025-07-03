@@ -1,8 +1,3 @@
-let b:ale_fixers = ['latexindent']
-
-" let b:ale_linters = ['chktex', 'lacheck', 'cspell', 'proselint', 'textlint', 'write-good']
-let b:ale_linters = ['chktex']
-
 " This is necessary for VimTeX to load properly. The "indent" is optional.
 " Note that most plugin managers will do this automatically.
 filetype plugin indent on
@@ -60,6 +55,16 @@ endif
 set conceallevel=2
 highlight clear Conceal
 
+" for omnicompletion
+let g:vimtex_complete_ref = {
+    \  'custom_patterns': [
+    \    '\\getkeytheorem\*\?{[^}]*$',
+    \    '\\psubsection\*\?{[^}]*$',
+    \    '\\psubsection\*\?{[^}]*}{[^}]*$',
+    \  ],
+    \}
+
+
 let g:vimtex_quickfix_ignore_filters = [
       \ 'Underfull',
       \ 'Overfull',
@@ -73,6 +78,11 @@ let g:vimtex_quickfix_ignore_filters = [
       \ 'setting the option has no effect',
       \ 'Package hyperref Warning: Draft mode on.',
       \ 'LaTeX Warning: Unused global option',
+      \ 'A possible image without description',
+      \ 'vspace should only be used to provide space above/below surrounding objects',
+      \ 'Package wrapfig Warning: Stationary wrapfigure forced to float',
+      \ 'Package wrapfig Warning: wrapfigure used inside a conflicting environment',
+      \ 'LaTeX Warning: Marginpar on page',
       \]
 
 let g:vimtex_compiler_latexmk = {
@@ -83,6 +93,7 @@ let g:vimtex_compiler_latexmk = {
     \ 'executable' : 'latexmk',
     \ 'hooks' : [],
     \ 'options' : [
+    \   '-f',
     \   '-shell-escape',
     \   '-verbose',
     \   '-file-line-error',
@@ -111,6 +122,10 @@ let g:vimtex_syntax_custom_cmds = [
     \ {'name': 'nse', 'cmdre': 'nse>', 'mathmode': 1, 'concealchar': '⭑'},
     \ {'name': 'to', 'cmdre': 'to>', 'mathmode': 1, 'concealchar': '→'},
     \ {'name': 'coloneq', 'cmdre': 'coloneq>', 'mathmode': 1, 'concealchar': '≔'},
+    \ {'name': 'vdash', 'cmdre': 'vdash>', 'mathmode': 1, 'concealchar': '⊢'},
+    \ {'name': 'vDash', 'cmdre': 'vDash>', 'mathmode': 1, 'concealchar': '⊨'},
+    \ {'name': 'triangleq', 'cmdre': 'triangleq>', 'mathmode': 1, 'concealchar': '≜'},
+    \ {'name': 'negthinspace', 'cmdre': 'negthinspace>', "conceal": 1},
     \]
 
 " \ {'name': 'ket',
@@ -162,4 +177,8 @@ let g:vimtex_syntax_custom_cmds_with_concealed_delims = [
     \  'cchar_open': '{',
     \  'cchar_mid': '|',
     \  'cchar_close': '}'},
+    \ {'name': 'interior',
+    \  'mathmode': 1,
+    \  'cchar_open': '',
+    \  'cchar_close': '◌૾'},
     \]

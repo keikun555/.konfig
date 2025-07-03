@@ -1,5 +1,9 @@
 let b:ale_fixers = ['ocamlformat']
 
-let g:opamshare = substitute(system('opam var share'),'\n$','','''')
-execute "set rtp+=" . g:opamshare . "/merlin/vim"
+if executable('opam')
+  let g:opamshare=substitute(system('opam var share'),'\n$','','''')
+  if isdirectory(g:opamshare."/merlin/vim")
+    execute "set rtp+=" . g:opamshare."/merlin/vim"
+  endif
+endif
 
