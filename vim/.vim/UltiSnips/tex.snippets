@@ -1,4 +1,13 @@
 priority 1
+
+snippet cat "cat{}" w
+\\cat{$1}$0
+endsnippet
+
+snippet sem "sem{}" w
+\\sem{$1}$0
+endsnippet
+
 snippet ra "rightarrow" w
 \rightarrow
 endsnippet
@@ -97,6 +106,18 @@ snippet prf "begin{prf} / end{prf}" b
 \\end{prf}
 endsnippet
 
+snippet rem "begin{rem} / end{rem}" b
+\\begin{rem}
+  $0
+\\end{rem}
+endsnippet
+
+snippet rrem "begin{restatable}{rem}{} / end{restatable}" b
+\\begin{restatable}{rem}{rem:$1}
+  $0
+\\end{restatable}
+endsnippet
+
 snippet proof "begin{proof} / end{proof}" b
 \\begin{proof}
   $0
@@ -107,6 +128,12 @@ snippet align "begin{align*} / end{align*}" b
 \\begin{align*}
   $0
 \\end{align*}
+endsnippet
+
+snippet enum* "\begin{enumerate*} / \end{enumerate*}"
+\\begin{enumerate*}
+  \\item $0
+\\end{enumerate*}
 endsnippet
 
 snippet enuma "\begin{enumerate}[label=(\alph*)] / \end{enumerate}"

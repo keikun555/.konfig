@@ -83,6 +83,7 @@ let g:vimtex_quickfix_ignore_filters = [
       \ 'Package wrapfig Warning: Stationary wrapfigure forced to float',
       \ 'Package wrapfig Warning: wrapfigure used inside a conflicting environment',
       \ 'LaTeX Warning: Marginpar on page',
+	  \ 'Package todonotes Warning: The length marginparwidth is less than',
       \]
 
 let g:vimtex_compiler_latexmk = {
