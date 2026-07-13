@@ -603,11 +603,6 @@ multiplier = 3
 save_to_clipboard = false
 semantic_escape_chars = ''',│`|:"' ()[]{}<>	'''
 
-# [visual_bell]
-# animation = "EaseOutExpo"
-# color = "0xffffff"
-# duration = 0
-
 [window]
 decorations = "Buttonless"
 dynamic_padding = false
@@ -627,3 +622,15 @@ x = 0
 y = 0
 
 [keyboard]
+
+# [bell]
+# animation = "Linear"
+# duration = 0
+# command.program = "osascript"
+# command.args = ["-e", "beep"]
+
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"

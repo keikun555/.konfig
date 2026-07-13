@@ -134,3 +134,9 @@ export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 
 # opam configuration
 [[ ! -r /home/kei/.opam/opam-init/init.zsh ]] || source /home/kei/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+# command not found handler
+function command_not_found_handler() {
+  afplay ~/Documents/Faah/Faah.mp3&echo "zsh: command not found: $1"&
+  return 127;
+}

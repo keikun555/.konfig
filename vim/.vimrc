@@ -11,7 +11,7 @@ filetype plugin indent on
 call plug#begin()
 
 " let Vundle manage Vundle, required
-Plug 'VundleVim/Vundle.vim'
+" Plug 'VundleVim/Vundle.vim'
 Plug 'Valloric/YouCompleteMe'
     " encoding stuff for YouCompleteMe
     set encoding=utf-8
@@ -100,10 +100,10 @@ Plug 'xolox/vim-session'
     let g:session_autoload = 'no'
     let g:session_autosave = 'no'
 Plug 'tpope/vim-obsession'
-Plug 'itchyny/calendar.vim'
-    " get google stuff
-    let g:calendar_google_calendar = 1
-    let g:calendar_google_task = 1
+" Plug 'itchyny/calendar.vim'
+"     " get google stuff
+"     let g:calendar_google_calendar = 1
+"     let g:calendar_google_task = 1
 " Plug 'vimwiki/vimwiki'
 Plug 'dkarter/bullets.vim'
 " Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
@@ -116,15 +116,12 @@ Plug 'lervag/vimtex'
     if empty(v:servername) && exists('*remote_startserver')
       call remote_startserver('VIM')
     endif
+    let g:vimtex_view_use_temp_files = v:true
 " Plug 'dhruvasagar/vim-table-mode'
 " Plug 'Chiel92/vim-autoformat' " This is done with ale
 " Plug 'ludovicchabant/vim-gutentags'
 Plug 'ervandew/supertab'
     let g:SuperTabDefaultCompletionType = '<C-n>'
-Plug 'SirVer/ultisnips'
-    let g:UltiSnipsExpandTrigger = "<tab>"
-    let g:UltiSnipsJumpForwardTrigger = "<tab>"
-    let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 Plug 'honza/vim-snippets'
 " typescript/javascript
 " Plug 'pangloss/vim-javascript'
@@ -138,10 +135,45 @@ Plug 'ap/vim-css-color'
 " Plug 'mtdl9/vim-log-highlighting'
 " All of your Plugs must be added before the following line
 " AI assistant
-Plug 'github/copilot.vim'
-Plug 'CoderCookE/vim-chatgpt'
+" Plug 'github/copilot.vim'
+Plug 'Exafunction/windsurf.vim', { 'branch': 'main' }
+    let g:codeium_no_map_tab = v:true
+    imap <script><silent><nowait><expr> <C-g> codeium#Accept()
+    imap <script><silent><nowait><expr> <C-h> codeium#AcceptNextWord()
+    imap <script><silent><nowait><expr> <C-j> codeium#AcceptNextLine()
+    imap <C-;>   <Cmd>call codeium#CycleCompletions(1)<CR>
+    imap <C-,>   <Cmd>call codeium#CycleCompletions(-1)<CR>
+    imap <C-x>   <Cmd>call codeium#Clear()<CR>
+Plug 'SirVer/ultisnips'
+    let g:UltiSnipsExpandTrigger = "<tab>"
+    let g:UltiSnipsJumpForwardTrigger = "<tab>"
+    let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+    " let g:UltiSnipsExpandTrigger = '<NOP>'
+    " let g:UltiSnipsJumpForwardTrigger = '<NOP>'
+    " let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
+    " " --- Chained Smart Tab Mapping ---
+    " function! SmartTab()
+    "     " 1. Check if UltiSnips can expand a snippet or jump forward
+    "     if UltiSnips#CanExpandSnippet() || UltiSnips#CanJumpForwards()
+    "         return "\<C-R>=UltiSnips#ExpandSnippetOrJump()\<CR>"
+    "     endif
+
+    "     " 2. If no snippet action, check if Codeium has a suggestion
+    "     let l:codeium_suggestion = codeium#GetStatusString()
+    "     " If Codeium status is active/suggesting, accept it
+    "     if l:codeium_suggestion !=# ' 0' && l:codeium_suggestion !=# ''
+    "         return codeium#Accept()
+    "     endif
+
+    "     " 3. Fallback to a standard literal Tab key press
+    "     return "\<Tab>"
+    " endfunction
+
+    " " Bind the wrapper function to the Tab key in Insert Mode
+    " inoremap <expr> <Tab> SmartTab()
+" Plug 'CoderCookE/vim-chatgpt'
 " Coq
-Plug 'whonore/Coqtail'
+" Plug 'whonore/Coqtail'
 " faster folding
 Plug 'Konfekt/FastFold'
     let g:fastfold_savehook = 1
@@ -154,8 +186,12 @@ Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 " Clojure
-Plug 'clojure-vim/clojure.vim'
+" Plug 'clojure-vim/clojure.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'Julian/lean.vim'
 call plug#end()
+
+" set b:copilot_enabled=v:false
 
 " Put your non-Plugin stuff after this line
 " we want react to detect changes

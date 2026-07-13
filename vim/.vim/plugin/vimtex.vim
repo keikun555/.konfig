@@ -22,6 +22,7 @@ filetype plugin indent on
 " let g:vimtex_view_method = 'zathura_simple'
 let g:vimtex_view_method = 'sioyek'
 let g:vimtex_view_sioyek_exe = '/Applications/sioyek.app/Contents/MacOS/sioyek'
+let g:vimtex_view_sioyek_options = '--reuse-window'
 
 " Or with a generic interface:
 " let g:vimtex_view_general_viewer = 'okular'
@@ -30,6 +31,14 @@ let g:vimtex_view_sioyek_exe = '/Applications/sioyek.app/Contents/MacOS/sioyek'
 let g:tex_flavor='latex'
 let g:vimtex_quickfix_mode=2
 let g:vimtex_quickfix_autoclose_after_keystrokes=1
+
+
+" This is a dictionary that can be used to configure the built-in ToC
+" matchers. See below for a specification of the ToC matcher "objects" and the
+" various keys that can be defined/changed (|toc_matcher_specification|).
+let g:vimtex_toc_config_matchers = {
+    \ 'apxsubsection': {'title': 'Subsection'},
+    \}
 
 " VimTeX uses latexmk as the default compiler backend. If you use it, which is
 " strongly recommended, you probably don't need to configure anything. If you
@@ -52,6 +61,11 @@ if empty(v:servername) && exists('*remote_startserver')
   call remote_startserver('VIM')
 endif
 
+if !exists('g:ycm_semantic_triggers')
+  let g:ycm_semantic_triggers = {}
+endif
+au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
+
 set conceallevel=2
 highlight clear Conceal
 
@@ -59,6 +73,8 @@ highlight clear Conceal
 let g:vimtex_complete_ref = {
     \  'custom_patterns': [
     \    '\\getkeytheorem\*\?{[^}]*$',
+    \    '\\apxsubsection\*\?{[^}]*$',
+    \    '\\apxsubsection\*\?{[^}]*}{[^}]*$',
     \    '\\psubsection\*\?{[^}]*$',
     \    '\\psubsection\*\?{[^}]*}{[^}]*$',
     \  ],
@@ -86,6 +102,8 @@ let g:vimtex_quickfix_ignore_filters = [
 	  \ 'Package todonotes Warning: The length marginparwidth is less than',
       \]
 
+" use for longer compilation but better errors
+" \   '-interaction=nonstopmode',
 let g:vimtex_compiler_latexmk = {
     \ 'aux_dir' : '',
     \ 'out_dir' : '',
@@ -99,7 +117,7 @@ let g:vimtex_compiler_latexmk = {
     \   '-verbose',
     \   '-file-line-error',
     \   '-synctex=1',
-    \   '-interaction=nonstopmode',
+    \   '-interaction=batchmode',
     \ ],
     \}
 
@@ -114,6 +132,8 @@ let g:vimtex_indent_lists = []
 " \ {'name': 'mathnote', 'mathmode': 1, 'nextgroup': 'texMathTextArg'},
 " \ {'name': 'nospell', 'argspell': 0},
 " \ {'name': 'pluseq', 'cmdre': 'coloneq>', 'mathmode': 1, 'concealchar': '+='},
+" \ {'name': 'lstinline', 'cmdre': 'lstinline', 'conceal': 1},
+" \ {'name': 'zlstinline', 'cmdre': 'zlstinline', 'conceal': 1},
 let g:vimtex_syntax_custom_cmds = [
     \ {'name': 'R', 'cmdre': 'R>', 'mathmode': 1, 'concealchar': '𝐑'},
     \ {'name': 'N', 'cmdre': 'N>', 'mathmode': 1, 'concealchar': 'N'},
@@ -125,8 +145,22 @@ let g:vimtex_syntax_custom_cmds = [
     \ {'name': 'coloneq', 'cmdre': 'coloneq>', 'mathmode': 1, 'concealchar': '≔'},
     \ {'name': 'vdash', 'cmdre': 'vdash>', 'mathmode': 1, 'concealchar': '⊢'},
     \ {'name': 'vDash', 'cmdre': 'vDash>', 'mathmode': 1, 'concealchar': '⊨'},
+    \ {'name': 'vdashd', 'cmdre': 'vdashd>', 'mathmode': 1, 'concealchar': '⊢'},
+    \ {'name': 'vDashd', 'cmdre': 'vDashd>', 'mathmode': 1, 'concealchar': '⊨'},
+    \ {'name': 'vdashc', 'cmdre': 'vdashd>', 'mathmode': 1, 'concealchar': '⊢'},
+    \ {'name': 'vDashc', 'cmdre': 'vDashd>', 'mathmode': 1, 'concealchar': '⊨'},
     \ {'name': 'triangleq', 'cmdre': 'triangleq>', 'mathmode': 1, 'concealchar': '≜'},
+    \ {'name': 'rightarrowtriangle', 'cmdre': 'rightarrowtriangle>', 'mathmode': 1, 'concealchar': '⇾'},
     \ {'name': 'negthinspace', 'cmdre': 'negthinspace>', "conceal": 1},
+    \ {'name': 'Coloneqq', 'cmdre': 'Coloneqq>', 'mathmode': 1, 'concealchar': '⩴'},
+    \ {'name': 'square', 'cmdre': 'square>', 'mathmode': 1, 'concealchar': '☐'},
+    \ {'name': 'Diamond', 'cmdre': 'Diamond>', 'mathmode': 1, 'concealchar': '◇'},
+    \ {'name': 'upharpoonright', 'cmdre': 'upharpoonright>', 'mathmode': 1, 'concealchar': '↾'},
+    \ {'name': 'scriptstyle', 'cmdre': 'scriptstyle>', "conceal": 1},
+    \ {'name': 'ms', 'cmdre': 'ms>', 'mathmode': 1, 'concealchar': 'ℳ'},
+    \ {'name': 'ds', 'cmdre': 'ds>', 'mathmode': 1, 'concealchar': '𝒟'},
+    \ {'name': 'ws', 'cmdre': 'ws>', 'mathmode': 1, 'concealchar': '𝒲'},
+    \ {'name': 'lesssim', 'cmdre': 'lesssim>', 'mathmode': 1, 'concealchar': '≲'},
     \]
 
 " \ {'name': 'ket',
@@ -160,10 +194,31 @@ let g:vimtex_syntax_custom_cmds_with_concealed_delims = [
     \  'mathmode': 1,
     \  'cchar_open': '‖',
     \  'cchar_close': '‖'},
-    \ {'name': 'den',
+    \ {'name': 'sem',
     \  'mathmode': 1,
     \  'cchar_open': '〚',
     \  'cchar_close': '〛'},
+    \ {'name': 'sembound',
+    \  'nargs': 2,
+    \  'mathmode': 1,
+    \  'cchar_open': '〚',
+    \  'cchar_mid': '|',
+    \  'cchar_close': '〛'},
+    \ {'name': 'dsem',
+    \  'nargs': 1,
+    \  'mathmode': 1,
+    \  'cchar_open': '〈',
+    \  'cchar_close': '〉'},
+    \ {'name': 'csem',
+    \  'nargs': 1,
+    \  'mathmode': 1,
+    \  'cchar_open': '⦇',
+    \  'cchar_close': '⦈'},
+    \ {'name': 'wsem',
+    \  'nargs': 1,
+    \  'mathmode': 1,
+    \  'cchar_open': '⦃',
+    \  'cchar_close': '⦄'},
     \ {'name': 'denc',
     \  'mathmode': 1,
     \  'cchar_open': '⦃',
@@ -178,8 +233,24 @@ let g:vimtex_syntax_custom_cmds_with_concealed_delims = [
     \  'cchar_open': '{',
     \  'cchar_mid': '|',
     \  'cchar_close': '}'},
+    \ {'name': 'hoarefst',
+    \  'nargs': 3,
+    \  'mathmode': 1,
+    \  'cchar_open': '[',
+    \  'cchar_mid': '|',
+    \  'cchar_close': ']'},
+    \ {'name': 'hoaret',
+    \  'nargs': 3,
+    \  'mathmode': 1,
+    \  'cchar_open': '[',
+    \  'cchar_mid': '|',
+    \  'cchar_close': ']'},
     \ {'name': 'interior',
     \  'mathmode': 1,
     \  'cchar_open': '',
     \  'cchar_close': '◌૾'},
+    \ {'name': 'lstinline',
+    \  'mathmode': 1},
+    \ {'name': 'zlstinline',
+    \  'mathmode': 1},
     \]
